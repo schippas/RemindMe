@@ -1,0 +1,24 @@
+{
+  "name": "remindme",
+  "version": "0.1.0",
+  "description": "A Web Application to view and create events, based on the time and Date, that users can RSVP to. Users that RSVP will receive an email notification as a reminder for the event with the details.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schippas/RemindMe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schippas/RemindMe/issues"
+  },
+  "homepage": "https://github.com/schippas/RemindMe#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^5.6.40"
+  }
+
+}
