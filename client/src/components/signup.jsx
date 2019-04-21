@@ -4,6 +4,7 @@ class SignUp extends Component {
   state = {};
 
   handleSignUp() {
+<<<<<<< HEAD
     var email = document.getElementById('userEmail').value; 
     var password = document.getElementById('userPwd').value; 
     var username = document.getElementById('userName').value; 
@@ -21,6 +22,20 @@ class SignUp extends Component {
      //var response = JSON.parse(this.responseText);
      //console.log(response);
      xhttp.send(obj);
+=======
+    console.log("sign up");
+	var username = document.getElementById('userName').value;
+	var email = document.getElementById('userEmail').value;
+	var password = document.getElementById('userPwd').value;
+	var data = JSON.stringify({"username":username, "password":password, "email":email});
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/signup", true);
+	xhttp.setRequestHeader("Content-Type", "application/json");
+	//xhttp.onreadystatechange = function () {
+		
+	//};
+	xhttp.send(data);
+>>>>>>> 888486e2d261c07480b30890e84baa38eae213e7
   }
 
   render() {
