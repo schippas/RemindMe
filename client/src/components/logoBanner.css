@@ -1,12 +1,13 @@
-.logo{
-    height: 100%;
-    background-color: black;
+.logo {
+  min-height: 100%;
 }
 
 .backStyle {
-    width:50%;
-    color: red;
-    background-color: blue;
-    height:100%;
-    text-align: left;
-  };
+  color: red;
+  display: flex;
+  justify-content: stretch;
+  background-color: blue;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+}

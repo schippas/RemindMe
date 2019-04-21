@@ -1,0 +1,15 @@
+.bannerStyle {
+  background-color: black;
+  color: red;
+}
+
+.eventStyle {
+  text-align: center;
+  background-color: aqua;
+  min-height: 100vh;
+}
+
+.createEventStyle {
+  text-align: center;
+  margin-bottom: 10px;
+}

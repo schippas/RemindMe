@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./login.css";
 
 class SignUp extends Component {
   state = {};
@@ -9,7 +10,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div>
+      <div className={"backStyle"}>
         <h1>Sign Up: </h1>
         <form>
           <fieldset>
@@ -26,8 +27,8 @@ class SignUp extends Component {
               <input type="password" id="userPwd" />
             </p>
           </fieldset>
+          <button onClick={this.handleSignUp}>Sign Up</button>
         </form>
-        <button onClick={this.handleSignUp}>Sign Up</button>
       </div>
     );
   }

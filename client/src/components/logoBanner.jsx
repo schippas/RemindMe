@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import Login from "./login";
 import SignUp from "./signup";
-import './logoBanner.css'
+import "./logoBanner.css";
 
 class LogoBanner extends Component {
-
   render() {
     return (
-    <div className="logo">   
-      <div className="backStyle">
+      <div className="logo">
+        <div className="backStyle">
           <Login />
           <SignUp />
-          <SignUp />
+        </div>
       </div>
-  </div>
-  );
+    );
   }
 }
 
