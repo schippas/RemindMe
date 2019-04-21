@@ -7,13 +7,15 @@ class LogoBanner extends Component {
 
   render() {
     return (
-    <div className="logo">   
-      <div className="backStyle">
-          <Login />
-          <SignUp />
-          <SignUp />
+     
+     <div className="logo"> hhk
+        
+               <div className="backStyle">
+                  <SignUp />
+              </div> 
+      
       </div>
-  </div>
+
   );
   }
 }

@@ -4,7 +4,23 @@ class SignUp extends Component {
   state = {};
 
   handleSignUp() {
-    console.log("sign up");
+    var email = document.getElementById('userEmail').value; 
+    var password = document.getElementById('userPwd').value; 
+    var username = document.getElementById('userName').value; 
+
+    document.getElementById('userEmail').value = ""; 
+    document.getElementById('userPwd').value = ""; 
+    document.getElementById('userName').value = ""; 
+    
+    var obj = JSON.stringify({"username":username, "password":password, "email":email});
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/signup" , true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+     
+     //var response = JSON.parse(this.responseText);
+     //console.log(response);
+     xhttp.send(obj);
   }
 
   render() {

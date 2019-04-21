@@ -1,12 +1,16 @@
 .logo{
-    height: 100%;
+    height: 100vh;
     background-color: black;
+    color: wheat;
+    overflow-y: scroll;
 }
 
 .backStyle {
     width:50%;
+    height: 60%;
     color: red;
     background-color: blue;
     height:100%;
     text-align: left;
   };
+  
