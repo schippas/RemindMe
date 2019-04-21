@@ -5,6 +5,17 @@ class SignUp extends Component {
 
   handleSignUp() {
     console.log("sign up");
+	var username = document.getElementById('userName').value;
+	var email = document.getElementById('userEmail').value;
+	var password = document.getElementById('userPwd').value;
+	var data = JSON.stringify({"username":username, "password":password, "email":email});
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/signup", true);
+	xhttp.setRequestHeader("Content-Type", "application/json");
+	//xhttp.onreadystatechange = function () {
+		
+	//};
+	xhttp.send(data);
   }
 
   render() {
