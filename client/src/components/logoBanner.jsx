@@ -5,6 +5,10 @@ import './logoBanner.css'
 
 class LogoBanner extends Component {
 
+onSignUp(){
+  
+}
+
   render() {
     return (
      
