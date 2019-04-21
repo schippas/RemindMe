@@ -1,0 +1,20 @@
+.bannerStyle {
+  background-color: black;
+  color: red;
+}
+
+.float-left-child {
+  display: inline-block;
+  text-align: left;
+}
+
+.float-right-child {
+  display: inline-block;
+  margin-block-end: 20 px;
+}
+
+.formStyle {
+  background-color: aqua;
+  min-height: 100vh;
+  text-align: center;
+}
