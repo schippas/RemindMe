@@ -1,0 +1,12 @@
+.logo{
+    height: 100%;
+    background-color: black;
+}
+
+.backStyle {
+    width:50%;
+    color: red;
+    background-color: blue;
+    height:100%;
+    text-align: left;
+  };

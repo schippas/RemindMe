@@ -1,26 +1,20 @@
 import React, { Component } from "react";
-
 import Login from "./login";
-
 import SignUp from "./signup";
+import './logoBanner.css'
 
 class LogoBanner extends Component {
-  backStyle = {
-    backgroundColor: "aqua"
-  };
 
   render() {
-    // console.log("fuck this fucking pice of shite");
     return (
-      <div style={this.backStyle} class="row">
-        <div class="column" className="m-5">
+    <div className="logo">   
+      <div className="backStyle">
           <Login />
-        </div>
-        <div class="column" className="m-5">
           <SignUp />
-        </div>
+          <SignUp />
       </div>
-    );
+  </div>
+  );
   }
 }
 
