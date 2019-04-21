@@ -10,6 +10,8 @@ import Counter from "./components/counter";
 import Login from "./components/login";
 import SignUp from "./components/signup";
 
+//testing git push
+
 //ReactDOM.render(<App />, document.getElementById("root"));
 
 ReactDOM.render(<LogoBanner />, document.getElementById("root"));
