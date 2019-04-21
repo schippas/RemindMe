@@ -5,6 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 // import "bootstrap/dist/css/bootstrap.css";
 
+import {BrowserRouter, Route,Switch} from 'react-router-dom';
 import LogoBanner from "./components/logoBanner";
 import Counter from "./components/counter";
 import Login from "./components/login";
@@ -15,11 +16,17 @@ import SignUp from "./components/signup";
 
 //ReactDOM.render(<App />, document.getElementById("root"));
 
-ReactDOM.render(<LogoBanner />, document.getElementById("root"));
+ReactDOM.render(
+<BrowserRouter>
+    <Switch>        
+        <div>
+            <Route exact path='/' component={LogoBanner}/>
+        </div>
+    </Switch>
+</BrowserRouter>,
 
-//ReactDOM.render(<Login />, document.getElementById("root"));
+ document.getElementById("root"));
 
-//ReactDOM.render(<SignUp />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
