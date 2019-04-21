@@ -6,7 +6,6 @@ import "./logoBanner.css";
 class LogoBanner extends Component {
   render() {
     return (
-<<<<<<< HEAD
       <div className="logo">
         <div className="backStyle">
           <Login />
@@ -14,18 +13,6 @@ class LogoBanner extends Component {
         </div>
       </div>
     );
-=======
-     
-     <div className="logo"> hhk
-        
-               <div className="backStyle">
-                  <SignUp />
-              </div> 
-      
-      </div>
-
-  );
->>>>>>> 0becd9b0973f93972dc6a4df5afabdfe842aa181
   }
 }
 

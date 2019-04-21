@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .logo {
   min-height: 100%;
 }
@@ -12,21 +11,3 @@
   width: 100%;
   height: 100%;
 }
-=======
-.logo{
-    height: 100vh;
-    background-color: black;
-    color: wheat;
-    overflow-y: scroll;
-}
-
-.backStyle {
-    width:50%;
-    height: 60%;
-    color: red;
-    background-color: blue;
-    height:100%;
-    text-align: left;
-  };
-  
->>>>>>> 0becd9b0973f93972dc6a4df5afabdfe842aa181
