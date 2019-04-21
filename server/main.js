@@ -24,6 +24,8 @@ dataBase.connect(function(err){
 	console.log('Connected to the Database!');
 });
 
+global.sql = dataBase;
+
 //Listens on port
 app.listen(port, (err) => {
 	if (err) { console.log( err ); };
