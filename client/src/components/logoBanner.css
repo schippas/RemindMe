@@ -47,7 +47,18 @@
 }
 
 .login_title{
-  height: 20%;
+  height: 40%;
+  font-family:'SignPainter';
+  font-size: 350%;
+  color: black;
+  display: inline-block;
+  /* padding: 2px; */
+  position: relative;
+}
+
+.signup_title{
+  height: 40%;
+  margin-top: 27%;
   font-family:'SignPainter';
   font-size: 350%;
   color: black;
@@ -69,6 +80,42 @@ fieldset {
     outline: none;
     padding: 2px;
     position: relative;
+}
+
+.signup_fields{
+  font-family:'SignPainter';
+  font-size: 160%;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  outline: none;
+  padding: 2px;
+  position: relative;
+  margin-bottom: 5%;
+}
+
+.signup_fields2 {
+  font-family:'SignPainter';
+  font-size: 160%;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  outline: none;
+  padding: 2px;
+  position: relative;
+  margin-bottom: 5%;
+}
+
+.signup_fields3 {
+  font-family:'SignPainter';
+  font-size: 160%;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  outline: none;
+  padding: 2px;
+  position: relative;
+  margin-bottom: 7.5%;
 }
 
 .submit_button {

@@ -4,7 +4,7 @@ import "./logoBanner.css";
 class SignUp extends Component {
   state = {};
 
-  handleSignUp() {
+  onClickSignUp() {
     var email = document.getElementById('userEmail').value; 
     var password = document.getElementById('userPwd').value; 
     var username = document.getElementById('userName').value; 
@@ -26,26 +26,30 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className={"backStyle"}>
-        <h1>Sign Up: </h1>
-        <form>
-          <fieldset>
-            <p>
-              <label>Enter Your Name:</label>
-              <input type="text" id="userName" />
-            </p>
-            <p>
-              <label>Enter Your Email:</label>
-              <input type="text" id="userEmail" />
-            </p>
-            <p>
-              <label>Enter A Password:</label>
-              <input type="password" id="userPwd" />
-            </p>
-          </fieldset>
-          <button onClick={this.handleSignUp}>Sign Up</button>
-        </form>
-      </div>
+
+        <div>
+          <h1 className= "signup_title">Sign Up </h1>
+                    
+                <div>
+                    <label className= "signup_fields"> Enter your Name: </label>
+                    <input type="text" id="userName" />
+                 </div>
+
+                 <div>
+                  <label className= "signup_fields2"> Enter your Email: </label>
+                  <input type="text" id="userEmail" />
+                </div>
+
+                <div>
+                  <label className= "signup_fields3"> Enter your Password: </label>
+                  <input type="password" id="userEmail" />
+                </div>
+
+                <div> 
+                  <button className= "submit_button" id="signup_button" onClick={this.onClickSignUp}> Sign Up </button>
+                </div> 
+
+              </div>
     );
   }
 }

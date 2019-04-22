@@ -18,11 +18,69 @@ class Login extends Component {
     //this.authenticateLogin();
   }
 
+  onClickLogin()
+  {
+     var email = document.getElementById('userEmail').value;
+     var password = document.getElementById('userPwd').value;
+
+     document.getElementById('userPwd').value = "";
+     document.getElementById('userEmail').value = "";
+
+     var obj = JSON.stringify({"email":email, "password":password});
+
+     var xhttp = new XMLHttpRequest();
+     xhttp.open("POST", "/api/login" , true);
+     xhttp.setRequestHeader("Content-Type", "application/json");
+     xhttp.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+       
+          var response = JSON.parse(this.responseText);
+          console.log(response);
+
+          if (response.status === 'okay') {
+            localStorage.token = response.token;
+            localStorage.account = response.account;
+            window.location.replace("/profile/" + response.account)
+          }
+        }
+     };
+     xhttp.send(obj);
+
+  }
+
+  onClickForgot()
+  {
+    var email_reset = document.getElementById('forgot_button').value;
+    document.getElementById('forgot_button').value = "";
+
+    var obj = JSON.stringify({"email":email_reset});
+
+     var xhttp = new XMLHttpRequest();
+     xhttp.open("POST", "/api/reset_password" , true);
+     xhttp.setRequestHeader("Content-Type", "application/json");
+     xhttp.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+       
+          var response = JSON.parse(this.responseText);
+          console.log(response);
+
+        }
+     };
+     xhttp.send(obj);
+
+
+  }
+
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <h1 className="login_title">Log In </h1>
 
+=======
+        <h1 className = "login_title">Log In </h1>
+  
+>>>>>>> 304b94efb90af3b4d183ce4e0d6dba715a2da21f
         <form>
           <fieldset>
             <p>
@@ -38,6 +96,7 @@ class Login extends Component {
         </form>
 
         <div>
+<<<<<<< HEAD
           <button
             className="submit_button"
             id="login_button"
@@ -53,6 +112,12 @@ class Login extends Component {
           >
             Forgot password
           </button>
+=======
+      
+          <button className= "submit_button" id="login_button" onClick={this.onClickLogin}> Login </button>
+          <button className= "submit_button" id="forgot_button" onClick={this.onClickForgot}>Forgot password</button>
+
+>>>>>>> 304b94efb90af3b4d183ce4e0d6dba715a2da21f
         </div>
       </div>
     );
