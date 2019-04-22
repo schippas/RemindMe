@@ -3,6 +3,7 @@ import "./createEvent.css";
 
 class CreateEvent extends Component {
   state = {};
+  
   render() {
     return (
       <div>

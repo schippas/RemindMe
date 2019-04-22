@@ -9,16 +9,37 @@ onSignUp(){
   
 }
 
-  
   render() {
     return (
+      
+      
       <div className="logo">
-        <div className="backStyle">
-          <Login />
-          <SignUp />
-        </div>
+  
+          <div className = "box"> 
+          
+                 <div className = "yellow_line"> 
+                  
+                  
+                      <div className="backStyle">
+
+                            <Login />
+                            <SignUp />
+
+                      </div>
+
+                 </div>     
+          
+          </div>
+
+
+        
+
       </div>
-    );
+   
+   
+   
+   
+   );
   }
 }
 
