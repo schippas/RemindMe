@@ -96,8 +96,10 @@ fieldset {
     display: inline-block;
     outline: none;
     padding: 2px;
+    margin-top: 4%;
     position: relative;
 }
+
 
 .signup_fields{
   font-family:'SignPainter';
@@ -149,6 +151,7 @@ fieldset {
   cursor: pointer;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  margin-top: 7%;
   
 }
 

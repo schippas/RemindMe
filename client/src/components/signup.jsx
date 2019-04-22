@@ -27,22 +27,22 @@ xhttp.send(data);
         <h1 className= 'signup_title' >Sign Up</h1>
 
           <div>
-            <label className='signup_fields'> Username   </label>
+            <label className='signup_fields'> Username:   </label>
             <input className='inputs2' type="text" id="username_id1"/>
         </div>
 
         <div>
-            <label className='signup_fields' > Email address  </label>
+            <label className='signup_fields' > Email address:  </label>
             <input className='inputs2' type="text" id="email_id1"/>
         </div>
 
         <div>
-            <label className='signup_fields' > Password  </label>
+            <label className='signup_fields' > Password:  </label>
             <input className='inputs2' type="password" id="password_id1"/>
         </div>
 
         <div>
-          	<button className="submit-buttons" id ="signup_button" onClick={() => this.handleSignUp()}>Submit</button>{' '}
+          	<button className="submit_button" id ="signup_button" onClick={() => this.handleSignUp()}>Submit</button>{' '}
           </div>
         
       </div>

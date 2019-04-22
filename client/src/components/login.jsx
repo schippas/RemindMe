@@ -26,7 +26,7 @@ xhttp.send(data);
         <h1 className = "login_title">Log In </h1>
 
             <div>
-              <label className= "login_fields"> Email: </label>
+              <label className= "login_fields"> Email address: </label>
               <input className='inputs' type="text" id="email_id" />
             </div>
 
