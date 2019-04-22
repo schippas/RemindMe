@@ -9,8 +9,7 @@
 }
 
 .float-right-child {
-  display: inline-block;
-  margin-block-end: 20 px;
+  text-align: center;
 }
 
 .formStyle {

@@ -17,24 +17,28 @@ class CreateEvent extends Component {
     return (
       <div>
         <div className={"bannerStyle"}>
-          <h1 className={"float-left-child"}>RemindMe *Logo here*</h1>
-          <button className={"float-right-child"} onClick={this.handleReturn}>
+          <h1 className={"float-left-child"}>RemindMe</h1>
+        </div>
+        <div className={"float-right-child"}>
+          <button onClick={this.handleReturn}>
             Return to Main Events Page
           </button>
         </div>
         <div className={"formStyle"}>
-          <h1>Create an Event:</h1>
-          <form>
-            <fieldset>
-              <p>Enter a Date:</p>
-              <input type="date" id="eventDate" />
-              <p>Give a Name for the Event</p>
-              <input type="text" id="eventName" />
-              <p>Provide Details for the Event:</p>
-              <input type="text" id="eventDetails" size="100" />
-            </fieldset>
-          </form>
-          <button onClick={this.handleSubmit}>Submit Event</button>
+          <h1>Event Details</h1>
+
+          <p>Event Name:</p>
+          <input type="text" id="eventName" />
+          <p>Event Date:</p>
+          <input type="date" id="eventDate" />
+          <p>Event Time:</p>
+          <input type="time" id="eventTime" />
+
+          <p>Event Description:</p>
+          <input type="text" id="eventDetails" size="100" />
+          <div>
+            <button onClick={this.handleSubmit}>Create Event</button>
+          </div>
         </div>
       </div>
     );

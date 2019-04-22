@@ -15,38 +15,45 @@ class Login extends Component {
 
   handleLogIn() {
     console.log("handle log in");
-    this.authenticateLogin();
+    //this.authenticateLogin();
   }
 
   render() {
     return (
       <div>
-        <h1 className = "login_title">Log In </h1>
-    
+        <h1 className="login_title">Log In </h1>
 
         <form>
           <fieldset>
             <p>
-              <label className= "login_fields"> Email: </label>
+              <label className="login_fields"> Email: </label>
               <input type="text" id="userEmail" />
             </p>
 
             <p>
-              <label className= "login_fields"> Password: </label>
+              <label className="login_fields"> Password: </label>
               <input type="password" id="userPwd" />
             </p>
-
           </fieldset>
-       
         </form>
 
         <div>
-      
-          <button className= "submit_button" id="login_button" onClick={this.handleLogIn}> Login </button>
-          <button className= "submit_button" id="forgot_button" onClick={this.handleLogIn}>Forgot password</button>
-
+          <button
+            className="submit_button"
+            id="login_button"
+            onClick={this.handleLogIn}
+          >
+            {" "}
+            Login{" "}
+          </button>
+          <button
+            className="submit_button"
+            id="forgot_button"
+            onClick={this.handleLogIn}
+          >
+            Forgot password
+          </button>
         </div>
-
       </div>
     );
   }
