@@ -4,6 +4,10 @@ import "./logoBanner.css";
 class SignUp extends Component {
   state = {};
 
+  // SignUpPress() {
+  //   window.location.replace("/create");
+  // }
+
 handleSignUp(){
 	var email = document.getElementById('email_id1').value; 
     	var password = document.getElementById('password_id1').value; 
@@ -14,13 +18,33 @@ handleSignUp(){
      	document.getElementById('email_id1').value = ""; 
 
      	var data = JSON.stringify({"username":username, "password":password, "email":email});
-
      	var xhttp = new XMLHttpRequest();
      	xhttp.open("POST", "/api/signup" , true);
      	xhttp.setRequestHeader("Content-Type", "application/json");
 
-xhttp.send(data);
+       xhttp.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+       
+          var response = JSON.parse(this.responseText);
+          console.log(response);
+          
+          if (response.status === 'okay') {
+            window.location.replace("/create");
+          }
+          else
+          {
+            localStorage.account = ""
+            // localStorage.token = ""
+          }
+        }
+     };
+
+       xhttp.send(data);
+
+      
 };
+
+
   render() {
     return (
 	<div>  
