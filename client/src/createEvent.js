@@ -13,18 +13,24 @@ class CreateEvent extends Component {
     window.location.replace("/events");
   }
 
+  loginReturn() {
+    window.location.replace("/");
+  }
+
   render() {
     return (
-      <div>
+      <div className="logo">
         <div className={"bannerStyle"}>
           <h1 className={"float-left-child"}>RemindMe</h1>
         </div>
         <div className={"float-right-child"}>
+          <button>Create Event</button>
           <button onClick={this.handleReturn}>
             Return to Main Events Page
           </button>
+          <button onClick={this.loginReturn}>Login/Signup</button>
         </div>
-        <div className={"formStyle"}>
+        <div className={"box"}>
           <h1>Event Details</h1>
 
           <p>Event Name:</p>
