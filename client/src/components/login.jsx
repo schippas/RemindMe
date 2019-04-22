@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import "./logoBanner.css";
 
 class Login extends Component {
-  state = {};
+  state = {
+    loginClicked: false
+  };
+
+  authenticateLogin() {
+    let email = document.getElementById("userEmail");
+    let pword = document.getElementById("userPwd");
+    console.log(email);
+    console.log(pword);
+  }
 
   handleLogIn() {
     console.log("handle log in");
+    this.authenticateLogin();
   }
 
   render() {
