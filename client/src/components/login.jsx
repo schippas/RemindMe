@@ -8,12 +8,64 @@ class Login extends Component {
     console.log("handle log in");
   }
 
+  onClickLogin()
+  {
+     var email = document.getElementById('userEmail').value;
+     var password = document.getElementById('userPwd').value;
+
+     document.getElementById('userPwd').value = "";
+     document.getElementById('userEmail').value = "";
+
+     var obj = JSON.stringify({"email":email, "password":password});
+
+     var xhttp = new XMLHttpRequest();
+     xhttp.open("POST", "/api/login" , true);
+     xhttp.setRequestHeader("Content-Type", "application/json");
+     xhttp.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+       
+          var response = JSON.parse(this.responseText);
+          console.log(response);
+
+          if (response.status === 'okay') {
+            localStorage.token = response.token;
+            localStorage.account = response.account;
+            window.location.replace("/profile/" + response.account)
+          }
+        }
+     };
+     xhttp.send(obj);
+
+  }
+
+  onClickForgot()
+  {
+    var email_reset = document.getElementById('forgot_button').value;
+    document.getElementById('forgot_button').value = "";
+
+    var obj = JSON.stringify({"email":email_reset});
+
+     var xhttp = new XMLHttpRequest();
+     xhttp.open("POST", "/api/reset_password" , true);
+     xhttp.setRequestHeader("Content-Type", "application/json");
+     xhttp.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+       
+          var response = JSON.parse(this.responseText);
+          console.log(response);
+
+        }
+     };
+     xhttp.send(obj);
+
+
+  }
+
   render() {
     return (
       <div>
         <h1 className = "login_title">Log In </h1>
-    
-
+  
         <form>
           <fieldset>
             <p>
@@ -32,8 +84,8 @@ class Login extends Component {
 
         <div>
       
-          <button className= "submit_button" id="login_button" onClick={this.handleLogIn}> Login </button>
-          <button className= "submit_button" id="forgot_button" onClick={this.handleLogIn}>Forgot password</button>
+          <button className= "submit_button" id="login_button" onClick={this.onClickLogin}> Login </button>
+          <button className= "submit_button" id="forgot_button" onClick={this.onClickForgot}>Forgot password</button>
 
         </div>
 
