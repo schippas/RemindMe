@@ -2,100 +2,45 @@ import React, { Component } from "react";
 import "./logoBanner.css";
 
 class Login extends Component {
-  state = {
-    loginClicked: false
-  };
+  state = {};
 
-  authenticateLogin() {
-    let email = document.getElementById("userEmail");
-    let pword = document.getElementById("userPwd");
-    console.log(email);
-    console.log(pword);
-  }
+handleLogIn() {
+	console.log("handle log in");
+	var email = document.getElementById('email_id').value;
+	var password = document.getElementById('password_id').value;
+	
+     	document.getElementById('email_id').value = "";
+     	document.getElementById('password_id').value = ""; 
 
-  handleLogIn() {
-    console.log("handle log in");
-    this.authenticateLogin();
-  }
+	var data = JSON.stringify({"email":email, "password":password});
 
-  onClickLogin()
-  {
-     var email = document.getElementById('userEmail').value;
-     var password = document.getElementById('userPwd').value;
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/api/login", true);
+     	xhttp.setRequestHeader("Content-Type", "application/json");
 
-     document.getElementById('userPwd').value = "";
-     document.getElementById('userEmail').value = "";
-
-     var obj = JSON.stringify({"email":email, "password":password});
-
-     var xhttp = new XMLHttpRequest();
-     xhttp.open("POST", "/api/login" , true);
-     xhttp.setRequestHeader("Content-Type", "application/json");
-     xhttp.onreadystatechange = function () {
-        if(this.readyState === 4 && this.status === 200) {
-       
-          var response = JSON.parse(this.responseText);
-          console.log(response);
-
-          if (response.status === 'okay') {
-            localStorage.token = response.token;
-            localStorage.account = response.account;
-            window.location.replace("/profile/" + response.account)
-          }
-        }
-     };
-     xhttp.send(obj);
-
-  }
-
-  onClickForgot()
-  {
-    var email_reset = document.getElementById('forgot_button').value;
-    document.getElementById('forgot_button').value = "";
-
-    var obj = JSON.stringify({"email":email_reset});
-
-     var xhttp = new XMLHttpRequest();
-     xhttp.open("POST", "/api/reset_password" , true);
-     xhttp.setRequestHeader("Content-Type", "application/json");
-     xhttp.onreadystatechange = function () {
-        if(this.readyState === 4 && this.status === 200) {
-       
-          var response = JSON.parse(this.responseText);
-          console.log(response);
-
-        }
-     };
-     xhttp.send(obj);
-
-
-  }
-
+xhttp.send(data);
+};
   render() {
     return (
       <div>
         <h1 className = "login_title">Log In </h1>
-  
-        <form>
-          <fieldset>
-            <p>
+
+            <div>
               <label className= "login_fields"> Email: </label>
-              <input type="text" id="userEmail" />
-            </p>
+              <input className='inputs' type="text" id="email_id" />
+            </div>
 
-            <p>
+            <div>
               <label className= "login_fields"> Password: </label>
-              <input type="password" id="userPwd" />
-            </p>
+              <input className='inputs' type="password" id="password_id" />
+            </div>
 
-          </fieldset>
-       
-        </form>
+
 
         <div>
       
-          <button className= "submit_button" id="login_button" onClick={this.onClickLogin}> Login </button>
-          <button className= "submit_button" id="forgot_button" onClick={this.onClickForgot}>Forgot password</button>
+          <button className= "submit_button" id="login_button" onClick={() => this.handleLogIn()}> Login </button>{' '}
+          <button className= "submit_button" id="forgot_button" onClick={() => this.handleLogIn()}>Forgot password</button>{' '}
 
         </div>
 

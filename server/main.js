@@ -1,11 +1,24 @@
 const express = require('express')
-const mysql = require('mysql')
-const port = 3070
+const bodyParser = require('body-parser')
 const app = express()
+const mysql = require('mysql')
+const nodemail = require('nodemailer')
+const port = 3070
 
-//routing
-app.get('/', function(req, res){
-	res.send('backend')
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+
+require('./routes')(app);
+
+app.get('/', function (req, res) {
+    out = "<h1>Anthologist backend!</h1><br>";
+
+    app._router.stack.forEach(function(r)
+    {
+        if (r.route && r.route.path && r.route.path != "/") out += r.route.path + "<br>"
+    });
+
+    res.send( out )
 });
 
 //Creates a MySQL database connection. Database is hosted on AWS

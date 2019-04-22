@@ -1,27 +1,13 @@
-const request = require("request");
-const uuid = require("uuid/v4");
+const fs = require('fs');
+const path = require('path');
 
+//Routes everyting to the api folder, for the sake of organization.
 module.exports = (app) => {
-
-	app.post('/signup', function(req, res) {
-		if(!req.body || !req.body.username || !req.body.password || !req.body.email){
-			console.log("Missing field in sign up!");
-			return res.sendStatus(400)		//need ;?
-		}
-		console.log("hello");
-		var username = req.body.username
-		var password = req.body.password
-		var email = req.body.email
-		var userid = uuid()
-		
-		sql.query( 
-			'INSERT INTO account (user_id, username, password, email) VALUES ( ?, ?, ?, ? )', 
-			[ userid, username, password, email ], 
-			function(err, rsql){
-				console.log('ok";
-			}
-		);	
-	});
-
-
+    fs.readdirSync('routes/api/').forEach((file) => {
+        if ( !file.startsWith(".") )
+        {
+            var fname = file.substr( 0, file.indexOf('.') );
+            require('./api/' + fname)(app);
+        }
+    })
 }
