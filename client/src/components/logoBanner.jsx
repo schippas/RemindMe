@@ -16,21 +16,15 @@ onSignUp(){
       <div className="logo">
   
           <div className = "box"> 
-          
-                 <div className = "yellow_line"> 
+              <div className = "yellow_line"> </div>
                   
-                      {/* <div className = "login_left"> */}
+                <div className = "login_left">   
+                         <Login />
+                </div>      
 
-                            <div className="backStyle">
-
-                                  <Login />
-                                  <SignUp />
-
-                            </div>
-
-                      {/* </div>       */}
-
-                 </div>     
+                <div className = "signup_right">
+                            <SignUp />
+                </div>     
           
           </div>
 

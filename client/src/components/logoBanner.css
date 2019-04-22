@@ -1,7 +1,7 @@
 .logo {
   min-height: 100%;
   height: 100vh;
-  background-color: black;
+  background-color: white;
   position:relative;
   overflow: hidden;
   overflow-y:scroll;
@@ -9,43 +9,83 @@
 }
 
 .box{     
-  position: fixed;
-  width: 700px;
-  height: 600px;
+  position: fixed; 
+  width: 99vh;         /* width: 700px;*/
+  height: 75vh;         /* height: 600px; */
   top: 15vh;
-  margin-left: 30%;
+  margin-left: 25%;
   margin-right: 25%;
   background-color: rgb(200, 255, 0);
-}
-
-.yellow_line{
-  position: fixed;
-  margin-left: 350px;
-  width: 5px;
-  height: 550px;
-  margin-block-start: 2%;
-  margin-block-end: 1%;
-  background-color:black;
 }
 
 .login_left{
   position: fixed;
   text-align: center;
-  top: 20vh;
-  margin-left: 351px;
-  width: 349px;
-  height: 500px;
-  background-color: blue;
+  top: 15vh;
+  margin-top: 5%;
+  /* margin-left: -27%; */
+  width: 50vh;        /* width: 349px; */
+  height: 75vh;      /* height: 500px; */
+}
+
+.yellow_line{
+  position: fixed;
+  margin-left: 27%; /* margin-left: 350px; */
+  width: 0.5%;
+  height: 75%;  /* height: 550px; */
+  background-color:black;
 }
 
 .signup_right{
   position: fixed;
   text-align: center;
-  top: 20vh;
+  margin-left: 27%;
+  top: 15vh;
   left: 45vh;
-  width: 349px;
-  height: 500px;
-  background-color: palegreen;
+  width: 50vh;
+  height: 75vh;
+}
+
+.login_title{
+  height: 20%;
+  font-family:'SignPainter';
+  font-size: 350%;
+  color: black;
+  display: inline-block;
+  /* padding: 2px; */
+  position: relative;
+}
+
+fieldset {
+  border: 0px;
+}
+
+.login_fields{
+    font-family:'SignPainter';
+    font-size: 160%;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    outline: none;
+    padding: 2px;
+    position: relative;
+}
+
+.submit_button {
+
+  background-attachment: fixed;
+  font-family:'SignPainter';
+  color: black;
+  display: inline-block;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  margin: 4px 12px;
+  padding: 5px 20px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  
 }
 
 .backStyle {

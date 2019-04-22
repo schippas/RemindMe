@@ -10,21 +10,33 @@ class Login extends Component {
 
   render() {
     return (
-      <div className={"backStyle"}>
-        <h1>Log In: </h1>
+      <div>
+        <h1 className = "login_title">Log In </h1>
+    
+
         <form>
           <fieldset>
             <p>
-              <label>Email: </label>
+              <label className= "login_fields"> Email: </label>
               <input type="text" id="userEmail" />
             </p>
+
             <p>
-              <label>Password: </label>
+              <label className= "login_fields"> Password: </label>
               <input type="password" id="userPwd" />
             </p>
+
           </fieldset>
-          <button onClick={this.handleLogIn}>Log In</button>
+       
         </form>
+
+        <div>
+      
+          <button className= "submit_button" id="login_button" onClick={this.handleLogIn}> Login </button>
+          <button className= "submit_button" id="forgot_button" onClick={this.handleLogIn}>Forgot password</button>
+
+        </div>
+
       </div>
     );
   }
