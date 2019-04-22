@@ -19,13 +19,16 @@ onSignUp(){
           
                  <div className = "yellow_line"> 
                   
-                  
-                      <div className="backStyle">
+                      {/* <div className = "login_left"> */}
 
-                            <Login />
-                            <SignUp />
+                            <div className="backStyle">
 
-                      </div>
+                                  <Login />
+                                  <SignUp />
+
+                            </div>
+
+                      {/* </div>       */}
 
                  </div>     
           
