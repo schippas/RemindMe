@@ -4,10 +4,13 @@ import "./mainEventPage.css";
 
 class MainEventPage extends Component {
   handleClickEvent() {
+    //this.setState({ createNewEvent: true });
     console.log("create event redirect");
+    window.location.replace("/create");
   }
 
   state = {
+    createNewEvent: false,
     events: [
       //fetch events here
     ]

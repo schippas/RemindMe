@@ -3,13 +3,22 @@ import "./createEvent.css";
 
 class CreateEvent extends Component {
   state = {};
-  
+
+  handleReturn() {
+    window.location.replace("/events");
+  }
+
+  handleSubmit() {
+    console.log("submitting event");
+    window.location.replace("/events");
+  }
+
   render() {
     return (
       <div>
         <div className={"bannerStyle"}>
           <h1 className={"float-left-child"}>RemindMe *Logo here*</h1>
-          <button className={"float-right-child"}>
+          <button className={"float-right-child"} onClick={this.handleReturn}>
             Return to Main Events Page
           </button>
         </div>
@@ -24,8 +33,8 @@ class CreateEvent extends Component {
               <p>Provide Details for the Event:</p>
               <input type="text" id="eventDetails" size="100" />
             </fieldset>
-            <button>Submit Event</button>
           </form>
+          <button onClick={this.handleSubmit}>Submit Event</button>
         </div>
       </div>
     );
