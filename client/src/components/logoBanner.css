@@ -1,13 +1,45 @@
 .logo {
   min-height: 100%;
+  height: 100vh;
+  background-color: black;
+  position:relative;
+  overflow: hidden;
+  overflow-y:scroll;
+  overflow-x:scroll;
+}
+
+.box{     
+  position: fixed;
+  width: 700px;
+  height: 600px;
+  top: 15vh;
+  left: 45vh;
+  background-color: rgb(200, 255, 0);
+}
+
+.yellow_line{
+  position: fixed;
+  margin-left: 350px;
+  width: 5px;
+  height: 550px;
+  margin-block-start: 2%;
+  margin-block-end: 1%;
+  background-color:black;
 }
 
 .backStyle {
   color: red;
   display: flex;
   justify-content: stretch;
-  background-color: blue;
+  height: 40%;
   text-align: left;
-  width: 100%;
-  height: 100%;
+  width: 50%; 
+  margin-left: 25%;
+  margin-right: 30%;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
+
+
+
+
