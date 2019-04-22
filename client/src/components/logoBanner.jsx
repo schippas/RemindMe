@@ -12,9 +12,10 @@ onSignUp(){
   render() {
     return (
       
-      
-      <div className="logo">
-  
+      <div className= "page_background"> 
+
+          <h1 className ="headerBar">RemindMe</h1>
+
           <div className = "box"> 
               <div className = "yellow_line"> </div>
                   
@@ -31,6 +32,7 @@ onSignUp(){
 
         
 
+        {/* </div> */}
       </div>
    
    

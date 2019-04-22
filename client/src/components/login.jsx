@@ -15,7 +15,6 @@ class Login extends Component {
 
   handleLogIn() {
     console.log("handle log in");
-    //this.authenticateLogin();
   }
 
   onClickLogin() {
@@ -66,8 +65,13 @@ class Login extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
+        <h1 className = "login_title">Log In </h1>
+  
+=======
         <h1 className="login_title">Log In </h1>
 
+>>>>>>> 7264da2b13620d1bd8bf52a30f9f63b5ab786c5b
         <form>
           <fieldset>
             <p>
@@ -83,6 +87,12 @@ class Login extends Component {
         </form>
 
         <div>
+<<<<<<< HEAD
+      
+          <button className= "submit_button" id="login_button" onClick={this.onClickLogin}> Login </button>
+          <button className= "submit_button" id="forgot_button" onClick={this.onClickForgot}>Forgot password</button>
+
+=======
           <button
             className="submit_button"
             id="login_button"
@@ -98,6 +108,7 @@ class Login extends Component {
           >
             Forgot password
           </button>
+>>>>>>> 7264da2b13620d1bd8bf52a30f9f63b5ab786c5b
         </div>
       </div>
     );
