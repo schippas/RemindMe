@@ -13,7 +13,8 @@
   width: 700px;
   height: 600px;
   top: 15vh;
-  left: 35%;
+  margin-left: 25%;
+  margin-right: 25%;
   background-color: rgb(200, 255, 0);
 }
 
