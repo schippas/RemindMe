@@ -7,6 +7,12 @@ class MainEventPage extends Component {
     console.log("create event redirect");
   }
 
+  state = {
+    events: [
+      //fetch events here
+    ]
+  };
+
   render() {
     return (
       <div>
