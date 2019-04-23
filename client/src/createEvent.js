@@ -49,7 +49,6 @@ class CreateEvent extends Component {
     return (
       <div className="pg_bgd">
         <h1 className="headerBar"> RemindMe </h1>
-
         <div className="options_bar">
           <button id="create_event_btn" className="option_bar_button">
             {" "}
@@ -72,29 +71,26 @@ class CreateEvent extends Component {
             Login/Signup{" "}
           </button>
         </div>
+        <div className="box">
+          <h1>Event Details</h1>
 
-        {/* <div className="box">
+          <p className="inside_the_box"> Event Name: </p>
+          <input type="text" id="eventName" />
 
-                <h1>Event Details</h1>
+          <p>Event Date:</p>
+          <input type="date" id="eventDate" />
 
-                <p className="inside_the_box"> Event Name: </p>
-                   <input type="text" id="eventName" />
+          <p>Event Time:</p>
+          <input type="time" id="eventTime" />
 
-                <p>Event Date:</p>
-                    <input type="date" id="eventDate" />
-              
-                <p>Event Time:</p>
-                   <input type="time" id="eventTime" />
+          <p>Event Description:</p>
+          <input className="TextBox" type="text" id="eventDetails" size="100" />
 
-                <p>Event Description:</p>
-                    <input className= "TextBox" type="text" id="eventDetails" size="100" />
-
-                <div>
-                  <button onClick={this.handleSubmit}>Create Event</button>
-                </div>
-
-        </div> */}
-
+          <div>
+            <button onClick={this.handleSubmit}>Create Event</button>
+          </div>
+        </div>{" "}
+        */}
         <div className="logo">
           <div className={"bannerStyle"}>
             <h1 className={"float-left-child"}>RemindMe</h1>
