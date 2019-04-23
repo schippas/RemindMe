@@ -47,20 +47,31 @@ class CreateEvent extends Component {
 
   render() {
     return (
-
-
       <div className="pg_bgd">
+        <h1 className="headerBar"> RemindMe </h1>
 
-          <h1 className ="headerBar"> RemindMe </h1>
-
-            <div className="options_bar">
-                
-                  <button id="create_event_btn" className="option_bar_button"> Create Event</button>
-                  <button id="return_main_btn" className="option_bar_button2" onClick={this.handleReturn}> Return to Main Events Page </button>
-                  <button id="login/signup" className="option_bar_button3" onClick={this.loginReturn}> Login/Signup </button>
-
-            </div>
-
+        <div className="options_bar">
+          <button id="create_event_btn" className="option_bar_button">
+            {" "}
+            Create Event
+          </button>
+          <button
+            id="return_main_btn"
+            className="option_bar_button2"
+            onClick={this.handleReturn}
+          >
+            {" "}
+            Return to Main Events Page{" "}
+          </button>
+          <button
+            id="login/signup"
+            className="option_bar_button3"
+            onClick={this.loginReturn}
+          >
+            {" "}
+            Login/Signup{" "}
+          </button>
+        </div>
 
         {/* <div className="box">
 
@@ -84,40 +95,44 @@ class CreateEvent extends Component {
 
         </div> */}
 
-
-
-      <div className="logo">
-        <div className={"bannerStyle"}>
-          <h1 className={"float-left-child"}>RemindMe</h1>
-        </div>
-        <div className={"float-right-child"}>
-          <button>Create Event</button>
-          <button onClick={this.handleReturn}>
-            Return to Main Events Page
-          </button>
-          <button onClick={this.loginReturn}>Login/Signup</button>
-        </div>
-        <div className={"box"}>
-          <h1 className = "create_event_title">Event Details</h1>
-
-          <div>Event Name:</div>
-          <input className= "input3" type="text" id="eventName" />
-
-          <div>Event Date:</div>
-          <input className= "input3" type="date" id="eventDate" />
-
-          <div>Event Time:</div>
-          <input className= "input3" type="time" id="eventTime" />
-
-          <div>Event Description:</div>
-          <input className= "input3" type="text" id="eventDetails" size="100" />
-          <div>
-            <button id="create_event" onClick={this.handleSubmit}>
-              Create Event
+        <div className="logo">
+          <div className={"bannerStyle"}>
+            <h1 className={"float-left-child"}>RemindMe</h1>
+          </div>
+          <div className={"float-right-child"}>
+            <button>Create Event</button>
+            <button onClick={this.handleReturn}>
+              Return to Main Events Page
             </button>
+            <button onClick={this.loginReturn}>Login/Signup</button>
+          </div>
+          <div className={"box"}>
+            <h1 className="create_event_title">Event Details</h1>
+
+            <div>Event Name:</div>
+            <input className="input3" type="text" id="eventName" />
+
+            <div>Event Date:</div>
+            <input className="input3" type="date" id="eventDate" />
+
+            <div>Event Time:</div>
+            <input className="input3" type="time" id="eventTime" />
+
+            <div>Event Description:</div>
+            <input
+              className="input3"
+              type="text"
+              id="eventDetails"
+              size="100"
+            />
+            <div>
+              <button id="create_event" onClick={this.handleSubmit}>
+                Create Event
+              </button>
+            </div>
           </div>
         </div>
-
+      </div>
     );
   }
 }
