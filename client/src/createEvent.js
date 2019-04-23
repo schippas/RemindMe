@@ -45,22 +45,22 @@ xhttp.send(data);
           <button onClick={this.handleReturn}>
             Return to Main Events Page
           </button>
-          <button onClick={this.loginReturn}>Login/Signup</button>
         </div>
-        <div className={"box"}>
-          <h1 className = "create_event_title">Event Details</h1>
+        <div className="box">
+          <h1>Event Details</h1>
 
-          <div>Event Name:</div>
-          <input className= "input3" type="text" id="eventName" />
+          <p className="inside_the_box"> Event Name: </p>
+          <input type="text" id="eventName" />
 
-          <div>Event Date:</div>
-          <input className= "input3" type="date" id="eventDate" />
+          <p>Event Date:</p>
+          <input type="date" id="eventDate" />
 
-          <div>Event Time:</div>
-          <input className= "input3" type="time" id="eventTime" />
+          <p>Event Time:</p>
+          <input type="time" id="eventTime" />
 
-          <div>Event Description:</div>
-          <input className= "input3" type="text" id="eventDetails" size="100" />
+          <p>Event Description:</p>
+          <input className="TextBox" type="text" id="eventDetails" size="100" />
+
           <div>
             <button onClick={this.handleSubmit}>Create Event</button>
           </div>

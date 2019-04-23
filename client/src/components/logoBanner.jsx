@@ -29,10 +29,6 @@ onSignUp(){
           
           </div>
 
-
-        
-
-        {/* </div> */}
       </div>
    
    
