@@ -24,6 +24,9 @@
   text-align: center;
 }
 
+.titleBar{
+  color: white;
+}
 .option_bar_button{
   background-attachment: fixed;
   font-family:'SignPainter';
@@ -88,6 +91,22 @@
   border-style: dashed;
 }
 
+.box23{
+  text-align: center;
+  margin-top: 2.5%;
+  position: absolute;
+  width: 80vh;  
+  height: 75vh;  
+  top: 15vh;
+  margin-left: 50%;
+  margin-right: 25%;
+  background-color: brown;
+  overflow-y: auto;
+  margin-bottom: 2.5%;
+ 
+}
+
+
 .styled{
 font-size: 350%;
 margin-bottom: 2%;
@@ -126,6 +145,53 @@ color: aliceblue;
   cursor: progress;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s; 
+}
 
+.small-box{
+  margin-top: 1%;
+  height: 10%;
+  background-color: green;
+  
+}
 
+.each-box{
+  margin-top: 1%;
+  height: 10%;
+  background-color: blue;
+  width: 95%;
+  float: right;
+  margin-right: 3%;
+}
+
+.each-box2{
+  height: 10%;
+  background-color: blue;
+  width: 95%;
+  float: right;
+  margin-right: 3%;
+  margin-top: 2%;
+}
+
+.mini_script{
+  float: left;
+  margin-top: 0%;
+  margin-left: 3%; 
+  color: white;
+}
+
+.which_week{
+  height: 40%;
+  width: 50%;
+  float: right;
+  margin-right: 10%;
+}
+
+.togglebtn{
+  float: left;
+  margin-top: 3%;
+  margin-left: 0.5%;
+}
+
+.inBoxEventDescription{
+  margin-top: 2%;
 }

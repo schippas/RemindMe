@@ -27,6 +27,7 @@ handleSignUp(){
           var response = JSON.parse(this.responseText);
           console.log(response);
           if (response.status === 'okay') {
+            localStorage.account=response.account;
             window.location.replace("/create");
           }else{
             localStorage.account = ""

@@ -26,20 +26,6 @@
   overflow-x: scroll;
 }
 
-.box {
-  text-align: center;
-  position: fixed;
-  width: 99vh;
-  height: 75 vh;
-  top: 15vh;
-  margin-left: 25%;
-  margin-right: 25%;
-  background-color: rgb(200, 255, 0);
-  border: 0.5%;
-  border-radius: 30%;
-  border-style: dashed;
-}
-
 .calendar {
   float: left;
   margin-left: 15%;

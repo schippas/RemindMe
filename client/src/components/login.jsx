@@ -17,17 +17,18 @@ handleLogIn() {
 	var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "/api/login", true);
         xhttp.setRequestHeader("Content-Type", "application/json"); 
-	xhttp.onreadystatechange = function () {
-        	if(this.readyState === 4 && this.status === 200) {
-          		var response = JSON.parse(this.responseText);
-          	console.log(response);
-          	if (response.status === 'okay') {
-            		window.location.replace("/create/")
-       		}else{
-            		localStorage.account = ""
-          	}
-        }
-     };
+        xhttp.onreadystatechange = function () {
+                if(this.readyState === 4 && this.status === 200) {
+                    var response = JSON.parse(this.responseText);
+                  console.log(response);
+                  if (response.status === 'okay') {
+                      localStorage.account=response.account;
+                      window.location.replace("/create/")
+                }else{
+                      localStorage.account = ""
+                  }
+              }
+          };
 
 xhttp.send(data);
 
