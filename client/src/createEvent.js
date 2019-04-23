@@ -20,7 +20,6 @@ class CreateEvent extends Component {
     document.getElementById("eventDetails").value = "";
     document.getElementById("eventDate").value = "";
     document.getElementById("eventTime").value = "";
-    //window.location.replace("/events");
     var data = JSON.stringify({
       "event_name": event_name,
       "event_info": event_info,
@@ -56,7 +55,6 @@ class CreateEvent extends Component {
             className="option_bar_button2"
             onClick={this.handleReturn}
           >
-            {" "}
             Return to Main Evnts Page
           </button>
 
@@ -65,7 +63,7 @@ class CreateEvent extends Component {
             className="option_bar_button3"
             onClick={this.loginReturn}
           >
-            {" "}
+
             Login/Signup
           </button>
         </div>
