@@ -38,25 +38,20 @@ xhttp.send(data);
     return (
       <div className="pg_bgd">
         <h1 className="headerBar"> RemindMe </h1>
+        
         <div className="options_bar">
-          <button id="create_event_btn" className="option_bar_button">
-            
-            Create Event
-          </button>
+
+          <button id="create_event_btn" className="option_bar_button"> Create Event </button>
+      
           <button
-            id="return_main_btn"
-            className="option_bar_button2"
-            onClick={this.handleReturn}
-          >
-            Return to Main Evnts Page
+            id="return_main_btn" className="option_bar_button2" onClick={this.handleReturn}> Return to Main Evnts Page
           </button>
+
           <button
-            id="login/signup"
-            className="option_bar_button3"
-            onClick={this.loginReturn}>
-            Login/Signup  </button>
-	    
+            id="login/signup" className="option_bar_button3" onClick={this.loginReturn}> Login/Signup
+          </button>
         </div>
+
         <div className="box">
           <h1>Event Details</h1>
 
