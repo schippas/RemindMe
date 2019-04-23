@@ -49,7 +49,7 @@ class CreateEvent extends Component {
     return (
 
 
-      <div className="pg_bgd">
+      {/* <div className="pg_bgd">
 
           <h1 className ="headerBar"> RemindMe </h1>
 
@@ -62,7 +62,7 @@ class CreateEvent extends Component {
             </div>
 
 
-        {/* <div className="box">
+         <div className="box">
 
                 <h1>Event Details</h1>
 
