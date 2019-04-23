@@ -60,7 +60,7 @@ class CreateEvent extends Component {
             onClick={this.handleReturn}
           >
             {" "}
-            Return to Main Events Page{" "}
+            Return to Main Evnts Page{" "}
           </button>
           <button
             id="login/signup"
