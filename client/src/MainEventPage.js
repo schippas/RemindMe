@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 // import "./mainEventPage.css";
 import "./createEvent.css";
+import Calendar from "react-calendar";
 
 class MainEventPage extends Component {
 
@@ -11,6 +12,10 @@ class MainEventPage extends Component {
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    state = {
+        date: new Date(),
     }
 
     handleClickEvent() {
@@ -31,6 +36,10 @@ class MainEventPage extends Component {
 
     onLoginClick() {
         window.location.replace("/");
+    }
+
+    onChange = (date) => {
+        this.setState({ date })
     }
 
     state = {
@@ -65,7 +74,7 @@ class MainEventPage extends Component {
                         Login/Signup
           </button>
                 </div>
-
+                <Calendar onChange={this.onChange} value={this.state.date} calendarType="US"></Calendar>
                 <div className="box23">
                     <h1 className="titleBar">Your Weekly Dose of Events</h1>
 
@@ -74,7 +83,7 @@ class MainEventPage extends Component {
                     </div>{}
 
                     <div>
-                        <input className="which_week" type="text" id="weekBox" />
+                        <input className="which_week" type="text" id="weekBox" value={this.state.date} />
                     </div>
 
                     <div className="each-box">
