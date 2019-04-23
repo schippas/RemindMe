@@ -46,8 +46,8 @@ class CreateEvent extends Component {
 
         <div className="options_bar">
           <button id="create_event_btn" className="option_bar_button">
-            {" "}
-            Create Event{" "}
+
+            Create Event
           </button>
 
           <button
