@@ -11,7 +11,7 @@
 }
 
 .headerBar{
- background-color: rgb(200, 255, 0);
+ background-color:white;
  height: 5vh;
  text-align: center;
  margin-top: 0;
@@ -148,7 +148,7 @@ fieldset {
   font-weight: bold;
   margin: 4px 12px;
   padding: 5px 20px;
-  cursor: pointer;
+  cursor: progress;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   margin-top: 7%;
