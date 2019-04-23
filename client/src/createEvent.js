@@ -36,21 +36,11 @@ xhttp.send(data);
 
   render() {
     return (
-<<<<<<< HEAD
-      <div className={"logo"}>
-        <div className={"bannerStyle"}>
-          <h1 className={"float-left-child"}>RemindMe</h1>
-        </div>
-        <div className={"float-right-child"}>
-          <button>Create Event</button>
-          <button onClick={this.handleReturn}>
-            Return to Main Events Page
-=======
       <div className="pg_bgd">
         <h1 className="headerBar"> RemindMe </h1>
         <div className="options_bar">
           <button id="create_event_btn" className="option_bar_button">
-            {" "}
+            
             Create Event
           </button>
           <button
@@ -58,18 +48,14 @@ xhttp.send(data);
             className="option_bar_button2"
             onClick={this.handleReturn}
           >
-            {" "}
-            Return to Main Evnts Page{" "}
+            Return to Main Evnts Page
           </button>
           <button
             id="login/signup"
             className="option_bar_button3"
-            onClick={this.loginReturn}
-          >
-            {" "}
-            Login/Signup{" "}
->>>>>>> 4234ddc6bff34f92aa4782a095fe14cc98fe5d46
-          </button>
+            onClick={this.loginReturn}>
+            Login/Signup  </button>
+	    
         </div>
         <div className="box">
           <h1>Event Details</h1>
