@@ -22,11 +22,11 @@ class CreateEvent extends Component {
     document.getElementById("eventTime").value = "";
     //window.location.replace("/events");
     var data = JSON.stringify({
-      event_name: event_name,
-      event_info: event_info,
-      event_date: event_date,
-      event_time: event_time,
-      user_id: user_id
+      "event_name": event_name,
+      "event_info": event_info,
+      "event_date": event_date,
+      "event_time": event_time,
+      "user_id": user_id
     });
 
     var xhttp = new XMLHttpRequest();
