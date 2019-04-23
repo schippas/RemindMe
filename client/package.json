@@ -5,6 +5,7 @@
   "dependencies": {
     "query-string": "^6.2.0",
     "react": "^16.8.1",
+    "react-calendar": "^2.18.1",
     "react-dom": "^16.8.1",
     "react-modal": "^3.8.1",
     "react-modular": "0.0.0",
