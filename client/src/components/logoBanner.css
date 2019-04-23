@@ -43,9 +43,9 @@
 
 .yellow_line{
   position: fixed;
-  margin-left: 27%; /* margin-left: 350px; */
+  margin-left: 27%; 
   width: 0.5%;
-  height: 75%;  /* height: 550px; */
+  height: 75%; 
   background-color:black;
 }
 

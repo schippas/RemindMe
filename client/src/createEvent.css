@@ -16,13 +16,10 @@
   height: 5vh;
   text-align: center;
   margin-top: 0;
-  /* display: inline-block;
-  text-align: left; */
  }
 
 .options_bar{
   height: 5vh;
-  /* background-color: antiquewhite; */
   margin-top: -1.3%;
   text-align: center;
 }
@@ -31,7 +28,6 @@
   background-attachment: fixed;
   font-family:'SignPainter';
   color: black;
-  /* display: inline-block; */
   text-align: left;
   font-size: 130%;
   font-weight: bold;
@@ -48,7 +44,6 @@
   background-attachment: fixed;
   font-family:'SignPainter';
   color: black;
-  /* display: inline-block; */
   text-align: left;
   font-size: 130%;
   font-weight: bold;
