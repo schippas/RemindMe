@@ -117,7 +117,7 @@ class CreateEvent extends Component {
             </button>
           </div>
         </div>
-
+        </div>
     );
   }
 }
