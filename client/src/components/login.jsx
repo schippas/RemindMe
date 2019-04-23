@@ -4,10 +4,6 @@ import "./logoBanner.css";
 class Login extends Component {
   state = {};
 
-  // loginPress() {
-  //   window.location.replace("/create");
-  // }
-
 handleLogIn() {
 	console.log("handle log in");
 	var email = document.getElementById('email_id').value;

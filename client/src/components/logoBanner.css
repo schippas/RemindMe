@@ -17,19 +17,16 @@
  margin-top: 0;
 }
 
-/* .logo {
 
-} */
-
-.box{     
+.box{    
   position: fixed; 
   width: 99vh;         /* width: 700px;*/
   height: 75vh;         /* height: 600px; */
   top: 15vh;
   margin-left: 25%;
   margin-right: 25%;
-  background-color: rgb(200, 255, 0);
   border: 0.5%;
+  background-color: brown; 
   border-radius: 30%;
   border-style: dashed;
   border-color: red;
@@ -40,9 +37,8 @@
   text-align: center;
   top: 15vh;
   margin-top: 5%;
-  /* margin-left: -27%; */
-  width: 50vh;        /* width: 349px; */
-  height: 75vh;      /* height: 500px; */
+  width: 50vh;        
+  height: 75vh;
 }
 
 .yellow_line{
@@ -69,7 +65,6 @@
   font-size: 350%;
   color: black;
   display: inline-block;
-  /* padding: 2px; */
   position: relative;
 }
 
@@ -80,7 +75,6 @@
   font-size: 350%;
   color: black;
   display: inline-block;
-  /* padding: 2px; */
   position: relative;
 }
 
