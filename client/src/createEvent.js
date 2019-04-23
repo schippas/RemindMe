@@ -105,7 +105,6 @@ xhttp.send(data);
           </div>
         </div>
 
-//      </div>
     );
   }
 }
