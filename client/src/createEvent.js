@@ -68,24 +68,26 @@ class CreateEvent extends Component {
           </button>
         </div>
 
-        <div className="box">
-          <h1>Event Details</h1>
+        <div className="box22">
+         
+          <h1 className="styled" >Event Details</h1>
 
-          <p className="inside_the_box"> Event Name: </p>
-          <input type="text" id="eventName" />
+          <p className="checkbox_title"> Event Name: </p>
+             <input type="text" id="eventName" />
 
-          <p>Event Date:</p>
-          <input type="date" id="eventDate" />
+          <p className="checkbox_title">Event Date:</p>
+             <input type="date" id="eventDate" />
 
-          <p>Event Time:</p>
-          <input type="time" id="eventTime" />
+          <p className="checkbox_title">Event Time:</p>
+             <input type="time" id="eventTime" />
 
-          <p>Event Description:</p>
-          <input className="TextBox" type="text" id="eventDetails" size="100" />
+          <p className="checkbox_title">Event Description:</p>
+             <input className="TextBox" type="text" id="eventDetails" size="100" />
 
           <div>
             <button onClick={this.handleSubmit}>Create Event</button>
           </div>
+
         </div>
       </div>
     );

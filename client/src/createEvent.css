@@ -84,22 +84,33 @@
 }
 
 
-.box {
+.box22 {
   text-align: center;
   margin-top: 2.5%;
   position: absolute;
-  width: 99vh; /* width: 700px;*/
-  height: 75vh; /* height: 600px; */
+  width: 99vh;  width: 700px;
+  height: 75vh;  height: 600px; 
   top: 15vh;
   margin-left: 25%;
   margin-right: 25%;
-  background-color: rgb(200, 255, 0);
+  background-color: brown;
   border: 0.5%;
   border-radius: 30%;
   border-style: dashed;
 }
 
-.bannerStyle {
+.styled{
+font-size: 350%;
+}
+
+.checkbox_title{
+  font-display: bold;
+  font-size: 230%;
+  font-stretch: extra-condensed;
+  font-style: italic;
+}
+
+/* .bannerStyle {
   background-color: black;
   color: red;
 }
@@ -108,4 +119,4 @@
   background-color: aqua;
   min-height: 100vh;
   text-align: center;
-}
+} */
