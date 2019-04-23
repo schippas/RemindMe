@@ -36,7 +36,7 @@ xhttp.send(data);
 
   render() {
     return (
-<<<<<<< HEAD
+
 
       <div className="pg_bgd">
 
@@ -74,7 +74,7 @@ xhttp.send(data);
         </div> */}
 
 
-=======
+
       <div className="logo">
         <div className={"bannerStyle"}>
           <h1 className={"float-left-child"}>RemindMe</h1>
@@ -104,7 +104,7 @@ xhttp.send(data);
             <button onClick={this.handleSubmit}>Create Event</button>
           </div>
         </div>
->>>>>>> daebcc30e660a5e26d3394a4fd42e1e57d535738
+
       </div>
     );
   }
