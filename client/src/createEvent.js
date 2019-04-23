@@ -47,6 +47,45 @@ class CreateEvent extends Component {
 
   render() {
     return (
+
+
+      <div className="pg_bgd">
+
+          <h1 className ="headerBar"> RemindMe </h1>
+
+            <div className="options_bar">
+                
+                  <button id="create_event_btn" className="option_bar_button"> Create Event</button>
+                  <button id="return_main_btn" className="option_bar_button2" onClick={this.handleReturn}> Return to Main Events Page </button>
+                  <button id="login/signup" className="option_bar_button3" onClick={this.loginReturn}> Login/Signup </button>
+
+            </div>
+
+
+        {/* <div className="box">
+
+                <h1>Event Details</h1>
+
+                <p className="inside_the_box"> Event Name: </p>
+                   <input type="text" id="eventName" />
+
+                <p>Event Date:</p>
+                    <input type="date" id="eventDate" />
+              
+                <p>Event Time:</p>
+                   <input type="time" id="eventTime" />
+
+                <p>Event Description:</p>
+                    <input className= "TextBox" type="text" id="eventDetails" size="100" />
+
+                <div>
+                  <button onClick={this.handleSubmit}>Create Event</button>
+                </div>
+
+        </div> */}
+
+
+
       <div className="logo">
         <div className={"bannerStyle"}>
           <h1 className={"float-left-child"}>RemindMe</h1>
@@ -59,24 +98,26 @@ class CreateEvent extends Component {
           <button onClick={this.loginReturn}>Login/Signup</button>
         </div>
         <div className={"box"}>
-          <h1>Event Details</h1>
+          <h1 className = "create_event_title">Event Details</h1>
 
-          <p>Event Name:</p>
-          <input type="text" id="eventName" />
-          <p>Event Date:</p>
-          <input type="date" id="eventDate" />
-          <p>Event Time:</p>
-          <input type="time" id="eventTime" />
+          <div>Event Name:</div>
+          <input className= "input3" type="text" id="eventName" />
 
-          <p>Event Description:</p>
-          <input type="text" id="eventDetails" size="100" />
+          <div>Event Date:</div>
+          <input className= "input3" type="date" id="eventDate" />
+
+          <div>Event Time:</div>
+          <input className= "input3" type="time" id="eventTime" />
+
+          <div>Event Description:</div>
+          <input className= "input3" type="text" id="eventDetails" size="100" />
           <div>
             <button id="create_event" onClick={this.handleSubmit}>
               Create Event
             </button>
           </div>
         </div>
-      </div>
+
     );
   }
 }

@@ -28,7 +28,7 @@ app.post('/api/signup', function(req, res) {
                 	}else{
                     		console.log( "Account Created!" )
                     		res.json({ "status":"okay","account":user_id});
-				request.post( "http://localhost:3070/api/send-verification", {json:{"account":user_id}} );
+
                 	}
             	}
         );
