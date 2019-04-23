@@ -8,6 +8,34 @@ class CreateEvent extends Component {
     window.location.replace("/events");
   }
 
+  onCreate() {
+    var date = document.getElementById("eventDate").value; //document.getelementbyid
+    var time = document.getElementById("eventTime").value;
+    var name = document.getElementById("eventName").value;
+    var details = document.getElementById("eventDetails").value;
+
+    var obj = JSON.stringify({
+      date: date,
+      time: time,
+      name: name,
+      details: details
+    });
+
+    var event_create = document.getElementById("create_event").value;
+    //document.getElementById("forgot_button").value = "";
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/api/login", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        //var response = parse
+        //response.status
+      }
+    };
+    xhttp.send(obj);
+  }
+
   handleSubmit() {
     console.log("submitting event");
     window.location.replace("/events");
@@ -43,7 +71,9 @@ class CreateEvent extends Component {
           <p>Event Description:</p>
           <input type="text" id="eventDetails" size="100" />
           <div>
-            <button onClick={this.handleSubmit}>Create Event</button>
+            <button id="create_event" onClick={this.handleSubmit}>
+              Create Event
+            </button>
           </div>
         </div>
       </div>

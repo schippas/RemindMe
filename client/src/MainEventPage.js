@@ -9,6 +9,14 @@ class MainEventPage extends Component {
     window.location.replace("/create");
   }
 
+  onMainEventClick() {
+    window.location.replace("/events");
+  }
+
+  onLoginClick() {
+    window.location.replace("/");
+  }
+
   state = {
     createNewEvent: false,
     events: [
@@ -18,14 +26,19 @@ class MainEventPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="logo">
         <div className={"bannerStyle"}>
-          <h1>RemindMe *Insert logo here*</h1>
+          <h1>RemindMe</h1>
         </div>
-        <div className={"createEventStyle"}>
+        <div>
+          <button onClick={this.onMainEventClick}>Main Event Page</button>
           <button onClick={this.handleClickEvent}>Create Event Now</button>
+          <button onClick={this.onLoginClick}>Login/Signup</button>
         </div>
-        <div className={"eventStyle"}>Upcoming Events:</div>
+        <div className={"box"}>
+          <div className={"calendar"}>Calendar Here</div>
+          <div className={"eventList"}>Event List Here</div>
+        </div>
       </div>
     );
   }
