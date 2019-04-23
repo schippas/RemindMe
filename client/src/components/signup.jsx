@@ -24,22 +24,17 @@ handleSignUp(){
 
        xhttp.onreadystatechange = function () {
         if(this.readyState === 4 && this.status === 200) {
-       
           var response = JSON.parse(this.responseText);
           console.log(response);
-          
           if (response.status === 'okay') {
             window.location.replace("/create");
-          }
-          else
-          {
+          }else{
             localStorage.account = ""
-            // localStorage.token = ""
           }
         }
      };
 
-       xhttp.send(data);
+xhttp.send(data);
 
       
 };

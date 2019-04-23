@@ -8,7 +8,7 @@ class Login extends Component {
   //   window.location.replace("/create");
   // }
 
-  handleLogIn() {
+handleLogIn() {
 	console.log("handle log in");
 	var email = document.getElementById('email_id').value;
 	var password = document.getElementById('password_id').value;
@@ -16,38 +16,25 @@ class Login extends Component {
      	document.getElementById('email_id').value = "";
      	document.getElementById('password_id').value = ""; 
 
-	    var data = JSON.stringify({"email":email, "password":password});
+	var data = JSON.stringify({"email":email, "password":password});
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.open("POST", "/api/login", true);
-      xhttp.setRequestHeader("Content-Type", "application/json"); 
-
-      xhttp.onreadystatechange = function () {
-        if(this.readyState === 4 && this.status === 200) {
-       
-          var response = JSON.parse(this.responseText);
-          console.log(response);
-          
-          if (response.status === 'okay') {
-            window.location.replace("/create/")
-          }
-          else
-          {
-            localStorage.account = ""
-            // localStorage.token = ""
-          }
+	var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/login", true);
+        xhttp.setRequestHeader("Content-Type", "application/json"); 
+	xhttp.onreadystatechange = function () {
+        	if(this.readyState === 4 && this.status === 200) {
+          		var response = JSON.parse(this.responseText);
+          	console.log(response);
+          	if (response.status === 'okay') {
+            		window.location.replace("/create/")
+       		}else{
+            		localStorage.account = ""
+          	}
         }
      };
 
-      xhttp.send(data);
+xhttp.send(data);
 
-
-      // var serverResp = JSON.parse(this.responseText);
-      // if(this.readyState === 4 && this.status === 200) {
-      //     if (serverResp === 'okay'){
-      //       this.loginPress();
-      //     }
-      // }
 
 };
 
