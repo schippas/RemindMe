@@ -40,6 +40,7 @@ class MainEventPage extends Component {
 
     onChange = (date) => {
         this.setState({ date })
+        console.log(this.date);
     }
 
     state = {
@@ -89,9 +90,23 @@ class MainEventPage extends Component {
 
                 </div>
 
-                <Calendar onChange={this.onChange} value={this.state.date} calendarType="US"></Calendar>
+                <div>   
+                   <Calendar className="calendarDiv" onChange={this.onChange} value={this.state.date} calendarType="US">
+
+                   </Calendar>
+                </div>
+
                 <div className="box23">
                     <h1 className="titleBar">Your Weekly Dose of Events</h1>
+
+                        <div>
+                            <input className="which_week" type="text" id="weekBox" value={this.state.date} />
+                        </div>
+
+                        <div>
+                            <h3 className="mini_script">Subscribe(d)</h3>
+                        </div>
+
 
                         <div className="each-box">
                                 <button className="togglebtn" onClick={this.handleClick}>
@@ -101,26 +116,79 @@ class MainEventPage extends Component {
                                 <div>
                                     <h1 className="inBoxEventDescription">fasfasd</h1>
                                 </div>
-
-                                <div>
-                                    <h3 className="mini_script">Subscribe(d)</h3>
-                                </div>
-
-                                <div>
-                                    <input className="which_week" type="text" id="weekBox" value={this.state.date} />
-                                </div>
-
-                                <div className="each-box">
-
-                                    <button className="togglebtn" onClick={this.handleClick}>
-                                        {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                                    </button>
-
-                                    <h1 className="inBoxEventDescription">fasfasd</h1>
-
-                                </div>
-
+                              
                         </div> 
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
+                        <div className="each-box2">
+
+                            <button className="togglebtn" onClick={this.handleClick}>
+                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                            </button>
+
+                            <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                        </div>
+
             </div>
 
          </div>
