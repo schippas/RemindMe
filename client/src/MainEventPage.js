@@ -7,35 +7,29 @@ import Calendar from "react-calendar";
 class MainEventPage extends Component {
 
 
-    /*Event(e_id, e_name, e_info, e_date, e_time) {
-        this.event_id = e_id;
-        this.event_name = e_name;
-        this.event_info = e_info;
-        this.event_date = e_date;
-        this.event_time = e_time;
-        //this.isToggleOn = true;
-
-    }*/
-
-
-    constructor(props) {
+constructor(props) {
         super(props);
-        this.state = {
-            isToggleOn: true,
-
-            //this.Event('2', 'CS', 'BIDC', 'Wed Apr 24', '1:00')
-
-            //new Event('1', 'Bowling', 'At URR', 'Mon Apr 22', '5:15')
-            events: [{ e_id: '1', e_name: 'Bowling Party', e_info: 'At the Union Rack & Roll', e_date: 'Mon Apr 22', e_time: '1:00 PM' },
-            { e_id: '2', e_name: 'CS', e_info: 'At BIDC', e_date: 'Wed Apr 24', e_time: '2:00 AM' },
-            { e_id: '3', e_name: 'Final', e_info: 'Elliot Hall', e_date: 'Fri Apr 26', e_time: '8:00 AM' }],
+        this.state = { 
+            value: {},
+            events:[],
             date: new Date(),
-        };
+            isToggleOn: true };
 
         // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-    }
+	this.handleClick = this.handleClick.bind(this);
+}
 
+
+
+addEvent = ( updateVal ) => {
+        this.setState(state => {
+            const events = state.events.concat(updateVal);
+            return {
+                events,
+                value:{},
+            };
+        })
+};
 
     handleClickEvent() {
         console.log("create event redirect");
@@ -62,7 +56,6 @@ class MainEventPage extends Component {
     }
 
 
-
     loginReturn() {
         window.location.replace("/");
     }
@@ -74,6 +67,33 @@ class MainEventPage extends Component {
     eventReturn() {
         window.location.replace("/create");
     }
+
+componentDidMount( ){
+       
+
+        const updateEvent = this.addEvent;
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/listEvents" , true);
+        console.log(this.readyState);
+
+        xhttp.setRequestHeader("Content-Type", "application/json");
+
+        xhttp.onreadystatechange = function (){
+            if ( this.readyState === 4 && this.status === 200 ){
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+
+                if ( response.status === 'okay' ){
+                    console.log(response.events);
+                    for ( var i = 0; i < response.events.length; i++ ){
+                        var event = response.events[i]
+                        updateEvent(event)
+                    }
+                }
+            }
+        };
+        xhttp.send(null);
+}
 
     render() {
         return (
@@ -111,29 +131,35 @@ class MainEventPage extends Component {
                 <div className="box23">
                     <h1 className="titleBar">Your Weekly Dose of Events</h1>
 
-                    <div>
-                        <h3 className="mini_script">Subsribe(d)</h3>
-                    </div>
+                        <div>
+                            <input className="which_week" type="text" id="weekBox" value={this.state.date} />
+                        </div>
 
-                    <div>
-                        <input className="which_week" type="text" id="weekBox" value={this.state.date} />
-                    </div>
-                    <div>
-                        <ul>
-                            {
-                                this.state.events.map((event) => (
-                                    <li key={event}>
-                                        <div className="each-box">
-                                            <button className="togglebtn" onClick={this.handleClick}>
-                                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                                            </button>
-                                            <h1 className="inBoxEventDescription">{event.e_name + ': ' + event.e_info + ' ' + event.e_date + ' at ' + event.e_time}</h1>
+                        <div>
+                            <h3 className="mini_script">Subscribe(d)</h3>
+			</div>
+
+			{
+                            this.state.events.map(({event_id, event_name, event_info, event_date, event_time}) =>{
+                                return(
+                                    
+                                        <div className="each-box2">
+
+                                                <button className="togglebtn" onClick={this.handleClick}>
+                                                    {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                                                </button>
+
+                                                <div> 
+                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_info.toString() + ' ' + event_date.toString() + ' at ' + event_time.toString()}</h1>
+                                                </div>
+
+                                              
+
                                         </div>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
+
+                                )
+                            })
+}
 
                 </div>
 
