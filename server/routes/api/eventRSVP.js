@@ -39,7 +39,7 @@ app.post('/api/RSVP', function(req,res) {
 app.post('/api/listEvents', function(req,res) {
 	
 	//should create array of events?
-	sql.query('SELECT events.*',
+	sql.query('SELECT * FROM events',
 		function( err, rsql ) {
                		if ( err ){
                         	console.log( "sql error in listEvents: ", err );
