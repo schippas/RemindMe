@@ -2,81 +2,95 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 // import "./mainEventPage.css";
 import "./createEvent.css";
+import Calendar from "react-calendar";
 
 class MainEventPage extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+    constructor(props) {
+        super(props);
+        this.state = { isToggleOn: true };
 
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }
+        // This binding is necessary to make `this` work in the callback
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-  handleClickEvent() {
-    //this.setState({ createNewEvent: true });
-    console.log("create event redirect");
-    window.location.replace("/create");
-  }
+    state = {
+        date: new Date(),
+    }
 
-  handleClick() {
-		this.setState(function(prevState) {
-			return {isToggleOn: !prevState.isToggleOn};
-		});
-	}
+    handleClickEvent() {
+        //this.setState({ createNewEvent: true });
+        console.log("create event redirect");
+        window.location.replace("/create");
+    }
 
-  onMainEventClick() {
-    window.location.replace("/events");
-  }
+    handleClick() {
+        this.setState(function (prevState) {
+            return { isToggleOn: !prevState.isToggleOn };
+        });
+    }
 
-  onLoginClick() {
-    window.location.replace("/");
-  }
+    onMainEventClick() {
+        window.location.replace("/events");
+    }
 
-  state = {
-    createNewEvent: false,
-    events: [
-      //fetch events here
-    ]
-  };
+    onLoginClick() {
+        window.location.replace("/");
+    }
 
-  render() {
-    return (
+    onChange = (date) => {
+        this.setState({ date })
+    }
 
-      <div className="pg_bgd">
-          <h1 className="headerBar"> RemindMe </h1>
-     
-          <div className="options_bar">
-          <button id="create_event_btn" className="option_bar_button">
-            Create Event
+    state = {
+        createNewEvent: false,
+        events: [
+            //fetch events here
+        ]
+    };
+
+    loginReturn() {
+        window.location.replace("/");
+    }
+
+    handleReturn() {
+        window.location.replace("/events");
+    }
+
+    eventReturn() {
+        window.location.replace("/create");
+    }
+
+    render() {
+        return (
+
+            <div className="pg_bgd">
+                <h1 className="headerBar"> RemindMe </h1>
+
+                <div className="options_bar">
+                    <button id="create_event_btn" className="option_bar_button" onClick={this.eventReturn}>
+                        Create Event
           </button>
 
-          <button
-            id="return_main_btn"
-            className="option_bar_button2"
-            onClick={this.handleReturn} >
-            Return to Main Events Page
+                    <button
+                        id="return_main_btn"
+                        className="option_bar_button2"
+                        onClick={this.handleReturn} >
+                        Return to Main Events Page
           </button>
 
-          <button
-            id="login/signup"
-            className="option_bar_button3"
-            onClick={this.loginReturn}>
-            Login/Signup
+                    <button
+                        id="login/signup"
+                        className="option_bar_button3"
+                        onClick={this.loginReturn}>
+                        Login/Signup
           </button>
-        </div>
-     
-        <div className="box23">
-                <h1 className="titleBar">Your Weekly Dose of Events</h1>
-                
-                <div>
-                    <h3 className="mini_script">Subscribe(d)</h3>
-                </div>{}
-                
-                <div>
-                    <input className="which_week" type="text" id="weekBox" />
                 </div>
+                <Calendar onChange={this.onChange} value={this.state.date} calendarType="US"></Calendar>
+                <div className="box23">
+                    <h1 className="titleBar">Your Weekly Dose of Events</h1>
 
+<<<<<<< HEAD
                 <div className="each-box">
                        <button className="togglebtn" onClick={this.handleClick}>
                           {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
@@ -84,15 +98,71 @@ class MainEventPage extends Component {
                       <div>
                           <h1 className="inBoxEventDescription">fasfasd</h1>
                       </div>
+=======
+                    <div>
+                        <h3 className="mini_script">Subscribe(d)</h3>
+                    </div>{}
+
+                    <div>
+                        <input className="which_week" type="text" id="weekBox" value={this.state.date} />
+                    </div>
+
+                    <div className="each-box">
+
+                        <button className="togglebtn" onClick={this.handleClick}>
+                            {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                        </button>
+
+                        <h1 className="inBoxEventDescription">fasfasd</h1>
+
+                    </div>
+
+                    {/* <div className="each-box2">
+                  
+                    <button className="togglebtn" onClick={this.handleClick}>
+                              {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                    </button>
+                    
+                    <h1>fasfasd</h1>
+
+>>>>>>> 70407238c6671a56b198115a7d80a4b3d32d031a
                 </div>
 
             
          </div>
 
+<<<<<<< HEAD
 
       </div>
     );
   }
+=======
+                </div> */}
+                </div>
+
+            </div>
+
+
+
+            // <div className="logo">
+            //   <div className={"bannerStyle"}>
+            //     <h1>RemindMe</h1>
+            //   </div>
+            //   <div>
+            //     <button onClick={this.onMainEventClick}>Main Event Page</button>
+            //     <button onClick={this.handleClickEvent}>Create Event Now</button>
+            //     <button onClick={this.onLoginClick}>Login/Signup</button>
+            //   </div>
+            //   <div className={"box"}>
+            //     <div className={"calendar"}>Calendar Here</div>
+            //     <div className={"eventList"}>Event List Here</div>
+            //   </div>
+            // </div>
+
+
+        );
+    }
+>>>>>>> 70407238c6671a56b198115a7d80a4b3d32d031a
 }
 
 export default withRouter(MainEventPage);

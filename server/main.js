@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 require('./routes')(app);
 
 app.get('/', function (req, res) {
-    out = "<h1>Anthologist backend!</h1><br>";
+    out = "<h1>RemindMe backend!</h1><br>";
 
     app._router.stack.forEach(function(r)
     {
@@ -38,6 +38,14 @@ dataBase.connect(function(err){
 });
 
 global.sql = dataBase;
+
+global.email = nodemail.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'remindme.252.noreply@gmail.com',
+		pass: 'RemindMeCS252!'
+	}
+});
 
 //Listens on port
 app.listen(port, (err) => {
