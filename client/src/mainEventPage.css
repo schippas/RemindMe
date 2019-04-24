@@ -28,8 +28,8 @@
 
 .calendar {
   float: left;
-  margin-left: 15%;
-  margin-top: 5%;
+  margin-left: 15% !important;
+  margin-top: 50% !important;
 }
 
 .eventList {

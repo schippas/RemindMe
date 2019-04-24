@@ -25,7 +25,7 @@ class MainEventPage extends Component {
     }
 
     handleClick() {
-        this.setState(function(prevState) {
+        this.setState(function (prevState) {
             return { isToggleOn: !prevState.isToggleOn };
         });
     }
@@ -49,6 +49,18 @@ class MainEventPage extends Component {
         ]
     };
 
+    loginReturn() {
+        window.location.replace("/");
+    }
+
+    handleReturn() {
+        window.location.replace("/events");
+    }
+
+    eventReturn() {
+        window.location.replace("/create");
+    }
+
     render() {
         return (
 
@@ -56,7 +68,7 @@ class MainEventPage extends Component {
                 <h1 className="headerBar"> RemindMe </h1>
 
                 <div className="options_bar">
-                    <button id="create_event_btn" className="option_bar_button">
+                    <button id="create_event_btn" className="option_bar_button" onClick={this.eventReturn}>
                         Create Event
           </button>
 
