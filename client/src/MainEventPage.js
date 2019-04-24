@@ -90,7 +90,6 @@ class MainEventPage extends Component {
                 <div className="box23">
                     <h1 className="titleBar">Your Weekly Dose of Events</h1>
 
-<<<<<<< HEAD
                 <div className="each-box">
                        <button className="togglebtn" onClick={this.handleClick}>
                           {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
@@ -98,7 +97,7 @@ class MainEventPage extends Component {
                       <div>
                           <h1 className="inBoxEventDescription">fasfasd</h1>
                       </div>
-=======
+
                     <div>
                         <h3 className="mini_script">Subscribe(d)</h3>
                     </div>{}
@@ -125,18 +124,18 @@ class MainEventPage extends Component {
                     
                     <h1>fasfasd</h1>
 
->>>>>>> 70407238c6671a56b198115a7d80a4b3d32d031a
+
                 </div>
 
             
          </div>
 
-<<<<<<< HEAD
+
 
       </div>
     );
   }
-=======
+
                 </div> */}
                 </div>
 
@@ -162,7 +161,7 @@ class MainEventPage extends Component {
 
         );
     }
->>>>>>> 70407238c6671a56b198115a7d80a4b3d32d031a
+
 }
 
 export default withRouter(MainEventPage);
