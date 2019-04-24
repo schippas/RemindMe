@@ -143,20 +143,7 @@ class MainEventPage extends Component {
 
 
 
-            // <div className="logo">
-            //   <div className={"bannerStyle"}>
-            //     <h1>RemindMe</h1>
-            //   </div>
-            //   <div>
-            //     <button onClick={this.onMainEventClick}>Main Event Page</button>
-            //     <button onClick={this.handleClickEvent}>Create Event Now</button>
-            //     <button onClick={this.onLoginClick}>Login/Signup</button>
-            //   </div>
-            //   <div className={"box"}>
-            //     <div className={"calendar"}>Calendar Here</div>
-            //     <div className={"eventList"}>Event List Here</div>
-            //   </div>
-            // </div>
+
 
 
         );
