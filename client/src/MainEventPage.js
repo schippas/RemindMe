@@ -82,10 +82,9 @@ class MainEventPage extends Component {
                 <h1 className="headerBar"> RemindMe </h1>
 
                 <div className="options_bar">
-
                     <button id="create_event_btn" className="option_bar_button" onClick={this.eventReturn}>
                         Create Event
-                        </button>
+                    </button>
 
                     <button
                         id="return_main_btn"
@@ -103,17 +102,17 @@ class MainEventPage extends Component {
 
                 </div>
 
-                <div>
-                    <Calendar className="calendarDiv" onChange={this.onChange} value={this.state.date} calendarType="US">
+                {/*<div> was here*/}
+                <Calendar className="calendarDiv" onChange={this.onChange} value={this.state.date} calendarType="US">
 
-                    </Calendar>
-                </div>
+                </Calendar>
+                {/*</div> was her*/}
 
                 <div className="box23">
                     <h1 className="titleBar">Your Weekly Dose of Events</h1>
 
                     <div>
-                        <input className="which_week" type="text" id="weekBox" value={this.state.date} />
+                        <h3 className="mini_script">Subsribe(d)</h3>
                     </div>
 
                     <div>
