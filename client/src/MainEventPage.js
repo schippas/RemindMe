@@ -8,14 +8,68 @@ class MainEventPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isToggleOn: true };
+        this.state = { 
+            value: {},
+            events:[],
+            date: new Date(),
+            isToggleOn: true };
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
     }
 
-    state = {
-        date: new Date(),
+    onAddItem = ( updateVal ) => {
+        this.setState(state => {
+            const events = state.events.concat(updateVal);
+            return {
+                events,
+                value:{},
+            };
+        })
+    };
+
+
+    componentDidMount( )
+    {
+       
+        if ( localStorage.account )
+        {
+            var tmpobj = localStorage.account;
+        }
+
+        console.log((tmpobj));
+       
+        var obj = JSON.stringify(tmpobj);
+        console.log((obj));
+
+        const updateEvent = this.onAddItem;
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/listEvents" , true);
+        console.log(this.readyState);
+
+        xhttp.setRequestHeader("Content-Type", "application/json");
+
+        xhttp.onreadystatechange = function ()
+        {
+            if ( this.readyState === 4 && this.status === 200 )
+            {
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+
+                if ( response.status === 'okay' )
+                {
+                    console.log(response.events);
+                    for ( var i = 0; i < response.events.length; i++ )
+                    {
+                        var event = response.events[i]
+
+                        updateEvent(event)
+                    }
+                }
+            }
+        };
+        console.log("obj is "+ obj);
+        xhttp.send(null);
     }
 
     handleClickEvent() {
@@ -114,80 +168,36 @@ class MainEventPage extends Component {
                                 </button>          
 
                                 <div>
-                                    <h1 className="inBoxEventDescription">fasfasd</h1>
+                                    <h1 className="inBoxEventDescription"> asas </h1>
                                 </div>
                               
                         </div> 
 
-                        <div className="each-box2">
+                        {
+                            this.state.events.map(({event_id, event_name, event_info, event_date, event_time}) =>{
+                                return(
+                                    
+                                        <div className="each-box2">
 
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
+                                                <button className="togglebtn" onClick={this.handleClick}>
+                                                    {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                                                </button>
 
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
+                                                <div> 
+                                                     <h1 className="inBoxEventDescription"> {event_time.toString() + " " + event_name.toString()} </h1>
+                                                </div>
 
-                        </div>
+                                              
 
-                        <div className="each-box2">
+                                        </div>
 
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
+                                )
+                            })
+                        }   
 
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
 
-                        </div>
-
-                        <div className="each-box2">
-
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
-
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
-
-                        </div>
-
-                        <div className="each-box2">
-
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
-
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
-
-                        </div>
-
-                        <div className="each-box2">
-
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
-
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
-
-                        </div>
-
-                        <div className="each-box2">
-
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
-
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
-
-                        </div>
-
-                        <div className="each-box2">
-
-                            <button className="togglebtn" onClick={this.handleClick}>
-                                {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                            </button>
-
-                            <h1 className="inBoxEventDescription">fasfasd</h1>
-
-                        </div>
+                         
+                    
 
             </div>
 
