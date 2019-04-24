@@ -194,4 +194,7 @@ color: aliceblue;
 
 .inBoxEventDescription{
   margin-top: 2%;
+  background-color: coral;
+  width: 80%;
+  float: right;
 }

@@ -78,56 +78,19 @@ class MainEventPage extends Component {
                 </div>
 
                 <div className="each-box">
-              
-                      <button className="togglebtn" onClick={this.handleClick}>
+                       <button className="togglebtn" onClick={this.handleClick}>
                           {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                      </button>
-                
-                      <h1 className="inBoxEventDescription">fasfasd</h1>
-
+                      </button>          
+                      <div>
+                          <h1 className="inBoxEventDescription">fasfasd</h1>
+                      </div>
                 </div>
 
-                {/* <div className="each-box2">
-                  
-                    <button className="togglebtn" onClick={this.handleClick}>
-                              {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                    </button>
-                    
-                    <h1>fasfasd</h1>
+            
+         </div>
 
-                </div>
-
-                <div className="each-box2">
-                   
-                      <button className="togglebtn" onClick={this.handleClick}>
-                          {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                      </button>
-                
-                      <h1>fasfasd</h1>
-
-                </div> */}
-        </div>
 
       </div>
-
-
-      
-      // <div className="logo">
-      //   <div className={"bannerStyle"}>
-      //     <h1>RemindMe</h1>
-      //   </div>
-      //   <div>
-      //     <button onClick={this.onMainEventClick}>Main Event Page</button>
-      //     <button onClick={this.handleClickEvent}>Create Event Now</button>
-      //     <button onClick={this.onLoginClick}>Login/Signup</button>
-      //   </div>
-      //   <div className={"box"}>
-      //     <div className={"calendar"}>Calendar Here</div>
-      //     <div className={"eventList"}>Event List Here</div>
-      //   </div>
-      // </div>
-
-
     );
   }
 }
