@@ -138,25 +138,9 @@ componentDidMount( ){
 
                         <div>
                             <h3 className="mini_script">Subscribe(d)</h3>
-			</div>
+			            </div>
 
-<<<<<<< HEAD
-
-                        {/* <div className="each-box">
-                                <button className="togglebtn" onClick={this.handleClick}>
-                                    {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
-                                </button>          
-
-                                <div>
-                                    <h1 className="inBoxEventDescription"> asas </h1>
-                                </div>
-                              
-                        </div>  */}
-
-                        {
-=======
-			{
->>>>>>> 44fc2908799bd6cc755e5b7fdd9d4b1eec451567
+		            	{
                             this.state.events.map(({event_id, event_name, event_info, event_date, event_time}) =>{
                                 return(
                                     
@@ -176,7 +160,7 @@ componentDidMount( ){
 
                                 )
                             })
-}
+                        }
 
                 </div>
 
