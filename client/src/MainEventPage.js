@@ -6,7 +6,8 @@ import Calendar from "react-calendar";
 
 class MainEventPage extends Component {
 
-    constructor(props) {
+
+constructor(props) {
         super(props);
         this.state = { 
             value: {},
@@ -15,10 +16,12 @@ class MainEventPage extends Component {
             isToggleOn: true };
 
         // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-    }
+	this.handleClick = this.handleClick.bind(this);
+}
 
-    onAddItem = ( updateVal ) => {
+
+
+addEvent = ( updateVal ) => {
         this.setState(state => {
             const events = state.events.concat(updateVal);
             return {
@@ -26,54 +29,9 @@ class MainEventPage extends Component {
                 value:{},
             };
         })
-    };
-
-
-    componentDidMount( )
-    {
-       
-        if ( localStorage.account )
-        {
-            var tmpobj = localStorage.account;
-        }
-
-        console.log((tmpobj));
-       
-        var obj = JSON.stringify(tmpobj);
-        console.log((obj));
-
-        const updateEvent = this.onAddItem;
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "/api/listEvents" , true);
-        console.log(this.readyState);
-
-        xhttp.setRequestHeader("Content-Type", "application/json");
-
-        xhttp.onreadystatechange = function ()
-        {
-            if ( this.readyState === 4 && this.status === 200 )
-            {
-                var response = JSON.parse(this.responseText);
-                console.log(response);
-
-                if ( response.status === 'okay' )
-                {
-                    console.log(response.events);
-                    for ( var i = 0; i < response.events.length; i++ )
-                    {
-                        var event = response.events[i]
-
-                        updateEvent(event)
-                    }
-                }
-            }
-        };
-        console.log("obj is "+ obj);
-        xhttp.send(null);
-    }
+};
 
     handleClickEvent() {
-        //this.setState({ createNewEvent: true });
         console.log("create event redirect");
         window.location.replace("/create");
     }
@@ -98,12 +56,6 @@ class MainEventPage extends Component {
         console.log(this.date);
     }
 
-    state = {
-        createNewEvent: false,
-        events: [
-            //fetch events here
-        ]
-    };
 
     loginReturn() {
         window.location.replace("/");
@@ -117,6 +69,33 @@ class MainEventPage extends Component {
         window.location.replace("/create");
     }
 
+componentDidMount( ){
+       
+
+        const updateEvent = this.addEvent;
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/listEvents" , true);
+        console.log(this.readyState);
+
+        xhttp.setRequestHeader("Content-Type", "application/json");
+
+        xhttp.onreadystatechange = function (){
+            if ( this.readyState === 4 && this.status === 200 ){
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+
+                if ( response.status === 'okay' ){
+                    console.log(response.events);
+                    for ( var i = 0; i < response.events.length; i++ ){
+                        var event = response.events[i]
+                        updateEvent(event)
+                    }
+                }
+            }
+        };
+        xhttp.send(null);
+}
+
     render() {
         return (
 
@@ -124,32 +103,31 @@ class MainEventPage extends Component {
                 <h1 className="headerBar"> RemindMe </h1>
 
                 <div className="options_bar">
-            
-                       <button id="create_event_btn" className="option_bar_button" onClick={this.eventReturn}>
-                            Create Event
+                    <button id="create_event_btn" className="option_bar_button" onClick={this.eventReturn}>
+                        Create Event
+                    </button>
+
+                    <button
+                        id="return_main_btn"
+                        className="option_bar_button2"
+                        onClick={this.handleReturn} >
+                        Return to Main Events Page
                         </button>
 
-                        <button
-                            id="return_main_btn"
-                            className="option_bar_button2"
-                            onClick={this.handleReturn} >
-                            Return to Main Events Page
-                        </button>
-
-                        <button
-                            id="login/signup"
-                            className="option_bar_button3"
-                            onClick={this.loginReturn}>
-                            Login/Signup
+                    <button
+                        id="login/signup"
+                        className="option_bar_button3"
+                        onClick={this.loginReturn}>
+                        Login/Signup
                         </button>
 
                 </div>
 
-                <div>   
-                   <Calendar className="calendarDiv" onChange={this.onChange} value={this.state.date} calendarType="US">
+                {/*<div> was here*/}
+                <Calendar className="calendarDiv" onChange={this.onChange} value={this.state.date} calendarType="US">
 
-                   </Calendar>
-                </div>
+                </Calendar>
+                {/*</div> was her*/}
 
                 <div className="box23">
                     <h1 className="titleBar">Your Weekly Dose of Events</h1>
@@ -160,8 +138,9 @@ class MainEventPage extends Component {
 
                         <div>
                             <h3 className="mini_script">Subscribe(d)</h3>
-                        </div>
+			</div>
 
+<<<<<<< HEAD
 
                         {/* <div className="each-box">
                                 <button className="togglebtn" onClick={this.handleClick}>
@@ -175,6 +154,9 @@ class MainEventPage extends Component {
                         </div>  */}
 
                         {
+=======
+			{
+>>>>>>> 44fc2908799bd6cc755e5b7fdd9d4b1eec451567
                             this.state.events.map(({event_id, event_name, event_info, event_date, event_time}) =>{
                                 return(
                                     
@@ -185,7 +167,7 @@ class MainEventPage extends Component {
                                                 </button>
 
                                                 <div> 
-                                                     <h1 className="inBoxEventDescription"> {event_time.toString() + " " + event_name.toString()} </h1>
+                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_info.toString() + ' ' + event_date.toString() + ' at ' + event_time.toString()}</h1>
                                                 </div>
 
                                               
@@ -194,15 +176,11 @@ class MainEventPage extends Component {
 
                                 )
                             })
-                        }   
+}
 
-
-                         
-                    
+                </div>
 
             </div>
-
-         </div>
         );
     }
 
