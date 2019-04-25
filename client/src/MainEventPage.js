@@ -5,43 +5,66 @@ import "./createEvent.css";
 import Calendar from "react-calendar";
 
 class MainEventPage extends Component {
+    constructor(props) {
+            super(props);
+            this.state = { 
+                value: {},
+                events:[],
+                date: new Date(),
+                isToggleOn: true,
+            };
 
-
-constructor(props) {
-        super(props);
-        this.state = { 
-            value: {},
-            events:[],
-            date: new Date(),
-            isToggleOn: true };
 
         // This binding is necessary to make `this` work in the callback
-	this.handleClick = this.handleClick.bind(this);
-}
+	      this.handleClick = this.handleClick.bind(this);
+    }
 
 
-
-addEvent = ( updateVal ) => {
-        this.setState(state => {
-            const events = state.events.concat(updateVal);
-            return {
-                events,
-                value:{},
-            };
-        })
-};
+    addEvent = ( updateVal ) => {
+            this.setState(state => {
+                const events = state.events.concat(updateVal);
+                return {
+                    events,
+                    value:{},
+                };
+            })
+    };
 
     handleClickEvent() {
         console.log("create event redirect");
         window.location.replace("/create");
     }
 
-    handleClick(event) {
-        this.setState(function (prevState){
-            return {isToggleOn: !prevState.isToggleOn}
+    // handleClick(event) {
+    //     this.setState(function (prevState){
+    //         return {isToggleOn: !prevState.isToggleOn}
 
+    //     });
+    // }
+
+    handleClick = i => {
+        this.setState(state => {
+            const events = state.events.map(({event_name, event_info, event_date, event_time}, j) => {
+                console.log("j is " + j);
+                console.log("i = " + i);
+
+                if ( j === i ){
+                    console.log("there");
+                    console.log("the value of isToggleOn = " + state.isToggleOn);
+                    console.log("the value of !isToggleOn = " + !state.isToggleOn);
+
+                    // this.isToggleOn:
+                    // isToggleOn: !isToggleOn;
+                    // console.log(isToggleOn);
+                    // return {isToggleOn: !state.isToggleOn}
+
+                }else{
+                    console.log("here");
+                }
+            });
+            return {events};
         });
-    }
+    };
 
     onMainEventClick() {
         window.location.replace("/events");
@@ -96,6 +119,7 @@ componentDidMount( ){
         xhttp.send(null);
 }
 
+
     render() {
         return (
 
@@ -140,21 +164,20 @@ componentDidMount( ){
                             <h3 className="mini_script">Subscribe(d)</h3>
 			            </div>
 
-		            	{
-                            this.state.events.map(({event_id, event_name, event_info, event_date, event_time}) =>{
+		            	 {
+                            this.state.events.map(({event_name, event_info, event_date, event_time}, index) =>{
                                 return(
                                     
                                         <div className="each-box2">
 
-                                                <button className="togglebtn" onClick={this.handleClick}>
+                                                <button className="togglebtn" onClick={ () => this.handleClick(index)}>
                                                     {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
                                                 </button>
 
                                                 <div> 
-                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_info.toString() + ' ' + event_date.toString() + ' at ' + event_time.toString()}</h1>
+                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_info.toString() + ' ' + event_date.toString() + ' at ' }</h1>
+                                                     <h1>{event_time.toString()}</h1>
                                                 </div>
-
-                                              
 
                                         </div>
 
