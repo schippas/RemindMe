@@ -45,7 +45,7 @@ app.post('/api/listEvents', function(req,res) {
                         	console.log( "sql error in listEvents: ", err );
                         	res.json({"status":"fail","reason":"sql error"});
                 	}else{
-                    		console.log( "List Working?" )
+                    		console.log( "List Working!" )
                     		//res.json({ "status":"okay","event":event_id});
 				var data = []
 				for(var i = 0; i<rsql.length; i++){
