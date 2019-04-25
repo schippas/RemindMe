@@ -78,9 +78,10 @@ class MainEventPage extends Component {
         window.location.replace("/create");
     }
 
-    handleClick() {
-        this.setState(function (prevState) {
-            return { isToggleOn: !prevState.isToggleOn };
+    handleClick(event) {
+        this.setState(function (prevState){
+            return {isToggleOn: !prevState.isToggleOn}
+
         });
     }
 
@@ -162,7 +163,7 @@ class MainEventPage extends Component {
                         </div>
 
 
-                        <div className="each-box">
+                        {/* <div className="each-box">
                                 <button className="togglebtn" onClick={this.handleClick}>
                                     {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
                                 </button>          
@@ -171,7 +172,7 @@ class MainEventPage extends Component {
                                     <h1 className="inBoxEventDescription"> asas </h1>
                                 </div>
                               
-                        </div> 
+                        </div>  */}
 
                         {
                             this.state.events.map(({event_id, event_name, event_info, event_date, event_time}) =>{
