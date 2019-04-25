@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const mysql = require('mysql')
-const nodemail = require('nodemailer')
+const nodemailer = require('nodemailer')
 const port = 3070
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -39,7 +39,7 @@ dataBase.connect(function(err){
 
 global.sql = dataBase;
 
-global.email = nodemail.createTransport({
+global.emailer = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: 'remindme.252.noreply@gmail.com',

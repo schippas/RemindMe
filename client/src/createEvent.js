@@ -27,12 +27,21 @@ class CreateEvent extends Component {
       "event_time": event_time,
       "user_id": user_id
     });
+
     console.log(data);
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/api/createEvent", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
 
     xhttp.send(data);
+
+    var xhttp2 = new XMLHttpRequest();
+    xhttp2.open("POST", "/api/email", true);
+    xhttp2.setRequestHeader("Content-Type", "application/json");
+
+    xhttp2.send(data);
+
+    
   }
 
   loginReturn() {
