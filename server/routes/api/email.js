@@ -71,7 +71,7 @@ sql.query( "SELECT * FROM attendees WHERE user_id=?;", [user_id],
 							from: '"RemindMe" <remindme.252.noreply@gmail.com',
 							to: email,
 							subject: "Event Notification",
-							text: ("You have registered for "+ event_name + ": " + event_info + " " + event_date + " " + event_time)
+							text: ("You have registered for "+ event_name + " \nEvent Details: " + event_info + "\nDate and Time: " + event_date + " " + event_time)
 						});
 					}
            			}
