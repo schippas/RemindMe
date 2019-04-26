@@ -59,7 +59,7 @@ sql.query( "SELECT * FROM attendees WHERE user_id=?;", [user_id],
 						console.log("email failed", err);
 						res.json({"status":"fail", "reason":"sql error"});
 					}else{
-						//console.log(event_id);
+						console.log(event_id);
 						
 						event_name = rsql[0].event_name;
 						event_info = rsql[0].event_info;

@@ -36,7 +36,24 @@ addEvent = ( updateVal ) => {
         window.location.replace("/create");
     }
 
-    handleClick() {
+    handleClick(event_id1) {
+	console.log("interested");
+		
+	//var event_id1 = document.getElementById("event_id").value;
+	//var user_id1 = document.getElementById("user_id").value;
+
+	var data = JSON.stringify({
+		"event_id": event_id1,
+		"user_id": localStorage.account
+	});
+
+        console.log(data);
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/RSVP", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+
+        xhttp.send(data);
+
         this.setState(function (prevState) {
             return { isToggleOn: !prevState.isToggleOn };
         });
@@ -145,7 +162,7 @@ componentDidMount( ){
                                     
                                         <div className="each-box2">
 
-                                                <button className="togglebtn" onClick={this.handleClick}>
+                                                <button className="togglebtn" onClick={() => this.handleClick(event_id)}>
                                                     {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
                                                 </button>
 
