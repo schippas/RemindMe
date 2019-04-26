@@ -1,3 +1,11 @@
+## How To Run This Project
+
+In one terminal go to the server directory and run 'node main'
+In another terminal go to the client directory and run 'npm start'
+From there go to localhost:3000 in a browser.
+If there are any errors, make sure you are running at least version 8.10.0 of node. 'nvm install 8.10.0' should make sure you are using that version.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
