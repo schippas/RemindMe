@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 
 require('./routes')(app);
 
+//Used for routing in the backend
 app.get('/', function (req, res) {
     out = "<h1>RemindMe backend!</h1><br>";
 
@@ -39,6 +40,7 @@ dataBase.connect(function(err){
 
 global.sql = dataBase;
 
+//Allows us to send email notifictions using nodemailer. 
 global.emailer = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {

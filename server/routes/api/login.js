@@ -11,10 +11,11 @@ app.post('/api/login', function(req, res) {
             return res.sendStatus(400)
         }
 	
-	//parses values from request, use email instead of username.
+	//parses values from request, uses email instead of username to handle logging in.
         const email = req.body.email
         const password = req.body.password
 
+	//sql query to verify account details with the ones provided for login.
         sql.query( 'SELECT id, password FROM accounts WHERE email=?;', [ email ],
         	function ( err, rsql ){
                 if ( err ){

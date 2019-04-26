@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-//Routes everyting to the api folder, for the sake of organization.
+//Routes the backend calls to the api folder, for the sake of organization.
 module.exports = (app) => {
     fs.readdirSync('routes/api/').forEach((file) => {
         if ( !file.startsWith(".") )
