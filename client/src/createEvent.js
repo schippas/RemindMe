@@ -73,7 +73,7 @@ class CreateEvent extends Component {
             onClick={this.loginReturn}
           >
 
-            Login/Signup
+            Logout
           </button>
         </div>
 

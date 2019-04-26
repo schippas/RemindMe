@@ -57,7 +57,7 @@ xhttp.send(data);
         <div>
       
           <button className= "submit_button" id="login_button" onClick={() => this.handleLogIn()}> Login </button>{' '}
-          <button className= "submit_button" id="forgot_button" onClick={() => this.handleLogIn()}>Forgot password</button>{' '}
+          {/* <button className= "submit_button" id="forgot_button" onClick={() => this.handleLogIn()}>Forgot password</button>{' '} */}
 
         </div>
 

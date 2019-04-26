@@ -140,7 +140,7 @@ componentDidMount( ){
                         id="login/signup"
                         className="option_bar_button3"
                         onClick={this.loginReturn}>
-                        Login/Signup
+                        Logout
                         </button>
 
                 </div>
@@ -152,7 +152,7 @@ componentDidMount( ){
                 {/*</div> was her*/}
 
                 <div className="box23">
-                    <h1 className="titleBar">Your Weekly Dose of Events</h1>
+                    <h1 className="titleBar">Your Dose of Events</h1>
 
                         <div>
                             <input className="which_week" type="text" id="weekBox" value={this.state.date} />
@@ -173,7 +173,7 @@ componentDidMount( ){
                                                 </button>
 
                                                 <div> 
-                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_date.toString() + ' at ' + event_time.toString()}</h1>
+                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_date.toString() + ' @ ' + event_time.toString()}</h1>
                                                 </div>
 
                                               
