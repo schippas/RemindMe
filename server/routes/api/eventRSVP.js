@@ -35,10 +35,10 @@ app.post('/api/RSVP', function(req,res) {
 });
 
 
-//handles returning events to the frontend.
+//handles returning events to the frontend to be displayed dynamically.
 app.post('/api/listEvents', function(req,res) {
 	
-	//should create array of events?
+	//should create array of events
 	sql.query('SELECT * FROM events',
 		function( err, rsql ) {
                		if ( err ){
@@ -48,6 +48,7 @@ app.post('/api/listEvents', function(req,res) {
                     		console.log( "List Working!" )
                     		//res.json({ "status":"okay","event":event_id});
 				var data = []
+				//pushes out data for all of the events to the frontend.
 				for(var i = 0; i<rsql.length; i++){
 					data.push({
 						"event_id":rsql[i].event_id,

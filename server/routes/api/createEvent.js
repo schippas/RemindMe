@@ -3,6 +3,7 @@ const uuid = require("uuid/v4")
 
 module.exports = (app) => {
 
+//This creates events in the databse, and registers the user who created it for the event.
 app.post('/api/createEvent', function(req, res) {
 
 	//verifies all fields are filled
