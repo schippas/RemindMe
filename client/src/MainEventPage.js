@@ -54,6 +54,12 @@ addEvent = ( updateVal ) => {
 
         xhttp.send(data);
 
+    	var xhttp2 = new XMLHttpRequest();
+    	xhttp2.open("POST", "/api/email", true);
+    	xhttp2.setRequestHeader("Content-Type", "application/json");
+
+    	xhttp2.send(data);
+
         this.setState(function (prevState) {
             return { isToggleOn: !prevState.isToggleOn };
         });
@@ -163,11 +169,11 @@ componentDidMount( ){
                                         <div className="each-box2">
 
                                                 <button className="togglebtn" onClick={() => this.handleClick(event_id)}>
-                                                    {this.state.isToggleOn ? 'Interested' : 'Not Interested'}
+                                                    {this.state.isToggleOn ? 'Interested' : 'Interested'}
                                                 </button>
 
                                                 <div> 
-                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_info.toString() + ' ' + event_date.toString() + ' at ' + event_time.toString()}</h1>
+                                                     <h1 className="inBoxEventDescription">{event_name.toString() + ': ' + event_date.toString() + ' at ' + event_time.toString()}</h1>
                                                 </div>
 
                                               
